@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Temporary tool files
+build_output.txt
+filelist.txt
+build_err.log
+photo_to_crop.jpg
+remove_bg.py

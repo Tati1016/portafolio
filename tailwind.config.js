@@ -10,7 +10,7 @@ export default {
         'soft-orchid': {
           '50': '#fff5fb',
           '100': '#fde6f7',
-          '200': '#fbbdeb',
+          '200': '#fbbdeb', // Primary accent
           '300': '#f78ad5',
           '400': '#f059bc',
           '500': '#e1339d',
@@ -20,12 +20,10 @@ export default {
           '900': '#721749',
           '950': '#46062a',
         },
-        'deep-night': '#0f070b',
-        'data-cyan': {
-          '400': '#22d3ee',
-          '500': '#06b6d4',
-        },
-        'soft-slate': '#94a3b8',
+        'deep-night': '#0f070b', // Background
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
     },
   },

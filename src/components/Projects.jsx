@@ -1,100 +1,75 @@
-// ─── PROYECTOS ────────────────────────────────────────────────────────────────
-// Edita este array con tus proyectos reales
-// Campos: title, description, techs, liveUrl, githubUrl
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Github, Code } from 'lucide-react';
+
 const projects = [
   {
-    title: 'Análisis de Datos con Python',
-    // Cambia por la descripción real del proyecto
-    description: 'Exploración y visualización de un dataset público usando Pandas, NumPy y Matplotlib para identificar patrones estadísticos relevantes.',
-    techs: ['Python', 'Pandas', 'Matplotlib', 'Jupyter'],
-    liveUrl: '#',    // Cambia '#' por la URL del demo en vivo
-    githubUrl: '#',  // Cambia '#' por la URL real del repositorio en GitHub
-  },
-  {
-    title: 'API REST con Node.js',
-    description: 'Backend de gestión de tareas con autenticación JWT, endpoints CRUD y conexión a base de datos.',
-    techs: ['Node.js', 'Express', 'MongoDB', 'JWT'],
-    liveUrl: '#',
+    title: 'ForoHub',
+    description: 'API RESTful para gestión de foros. Implementa operaciones CRUD completas, autenticación y autorización con JWT, validación de datos y encriptación de contraseñas, siguiendo las mejores prácticas de arquitectura y seguridad.',
+    techs: ['Java', 'Spring Boot', 'Spring Security', 'JPA/Hibernate', 'MySQL'],
     githubUrl: '#',
   },
   {
-    title: 'Portafolio Personal',
-    description: 'Este mismo portafolio — SPA construida con Vite + React y la paleta de colores royal-purple, con diseño responsivo y scroll suave.',
-    techs: ['React', 'Vite', 'Tailwind CSS'],
-    liveUrl: '#',
+    title: 'Conversor de Monedas',
+    description: 'Aplicación backend capaz de realizar conversiones de divisas en tiempo real consumiendo la Exchange Rate API. Implica parseo de JSON, manejo estricto de excepciones y lógica algorítmica sólida en Java.',
+    techs: ['Java', 'API REST', 'GSON'],
     githubUrl: '#',
   },
-  // Agrega más proyectos aquí siguiendo la misma estructura
+  {
+    title: 'Proyecto de Análisis de Datos Talento Tech',
+    description: 'Proceso completo de ETL (Extracción, Transformación y Carga) sobre datasets relevantes. Generación de insights clave e identificación de patrones ocultos mediante limpieza rigurosa de datos y visualización efectiva.',
+    techs: ['Python', 'Pandas', 'Visualización', 'Estadística'],
+    githubUrl: '#',
+  },
 ];
-
-function ProjectCard({ title, description, techs, liveUrl, githubUrl }) {
-  return (
-    <article className="flex flex-col bg-royal-purple-950 border border-royal-purple-800/50 rounded-2xl p-6 hover:border-royal-purple-500/70 hover:bg-royal-purple-900/60 transition-all duration-300 group">
-
-
-      {/* Ícono decorativo */}
-      <div className="w-10 h-10 rounded-xl bg-royal-purple-700/50 text-royal-purple-300 flex items-center justify-center mb-4 group-hover:bg-royal-purple-600/60 transition-colors">
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
-        </svg>
-      </div>
-
-      <h3 className="text-white font-semibold text-lg mb-2 group-hover:text-royal-purple-100 transition-colors">
-        {title}
-      </h3>
-      <p className="text-royal-purple-300 text-sm leading-relaxed mb-4 flex-1">
-        {description}
-      </p>
-
-      {/* Tecnologías */}
-      <div className="flex flex-wrap gap-1.5 mb-5">
-        {techs.map(t => (
-          <span key={t} className="px-2 py-0.5 bg-royal-purple-800/60 text-royal-purple-300 text-xs rounded-full border border-royal-purple-700/40">
-            {t}
-          </span>
-        ))}
-      </div>
-
-      {/* Botones */}
-      <div className="flex gap-3">
-        <a
-          href={liveUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex-1 text-center py-2 px-3 bg-royal-purple-600 hover:bg-royal-purple-500 text-white text-sm font-medium rounded-lg transition-colors"
-        >
-          Ver demo
-        </a>
-        <a
-          href={githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex-1 text-center py-2 px-3 border border-royal-purple-600 text-royal-purple-300 hover:bg-royal-purple-800/50 hover:text-white text-sm font-medium rounded-lg transition-colors"
-        >
-          GitHub
-        </a>
-      </div>
-    </article>
-  );
-}
 
 export default function Projects() {
   return (
-    <section id="proyectos" className="py-20 px-6 border-t border-royal-purple-800/40">
-      <div className="max-w-5xl mx-auto">
+    <section className="py-24 px-8 md:px-20 bg-[#0f070b]">
+      <div className="max-w-6xl mx-auto">
+        
+        <div className="text-center mb-16">
+          <p className="text-[#fbbdeb] text-sm font-semibold uppercase tracking-widest mb-3">
+            Construcción
+          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-14">
+            Proyectos Destacados
+          </h2>
+        </div>
 
-        {/* Encabezado */}
-        <p className="text-royal-purple-400 text-sm font-semibold uppercase tracking-widest mb-2 text-center">
-          Mi trabajo
-        </p>
-        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-14">
-          Proyectos
-        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((p, i) => (
+            <motion.div
+              key={p.title}
+              className="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col hover:border-[#fbbdeb]/40 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(251,189,235,0.1)] transition-all duration-300"
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: i * 0.15 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-white font-bold text-2xl mb-4">{p.title}</h3>
+              <p className="text-white/70 text-base leading-relaxed mb-6 flex-1">
+                {p.description}
+              </p>
+              
+              <div className="flex flex-wrap gap-2 mb-8">
+                {p.techs.map((t) => (
+                  <span key={t} className="px-3 py-1 bg-[#0f070b] text-white/80 text-xs font-medium rounded-full border border-white/10">
+                    {t}
+                  </span>
+                ))}
+              </div>
 
-        {/* Grid responsivo: 1 col → 2 col → 3 col */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map(p => (
-            <ProjectCard key={p.title} {...p} />
+              <a
+                href={p.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 w-full py-3 bg-[#fbbdeb]/10 text-[#fbbdeb] font-semibold rounded-xl border border-[#fbbdeb]/20 hover:bg-[#fbbdeb] hover:text-[#0f070b] transition-all duration-300"
+              >
+                <Code className="w-4 h-4" />
+                Ver Código
+              </a>
+            </motion.div>
           ))}
         </div>
 

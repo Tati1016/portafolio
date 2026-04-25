@@ -1,74 +1,72 @@
-// ─── SKILLS ──────────────────────────────────────────────────────────────────
-// Edita estas listas con tus habilidades reales
-const dataSkills = [
-  'Python', 'R', 'Pandas', 'NumPy', 'Matplotlib',
-  'SQL', 'Estadística Inferencial', 'Visualización de datos',
-  'Machine Learning (básico)', 'Excel avanzado',
-];
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Code2, Server, LineChart, GitBranch } from 'lucide-react';
 
-const devSkills = [
-  'JavaScript', 'React', 'Node.js', 'Express', 'REST APIs',
-  'HTML5', 'CSS3', 'Tailwind CSS', 'Git & GitHub', 'Vite',
+const categories = [
+  {
+    title: 'Lenguajes',
+    icon: <Code2 className="w-6 h-6 text-[#fbbdeb]" />,
+    skills: ['Java', 'Python', 'R', 'SQL'],
+  },
+  {
+    title: 'Backend',
+    icon: <Server className="w-6 h-6 text-[#fbbdeb]" />,
+    skills: ['Spring Boot', 'Spring Security', 'Hibernate'],
+  },
+  {
+    title: 'Datos',
+    icon: <LineChart className="w-6 h-6 text-[#fbbdeb]" />,
+    skills: ['Análisis Estadístico', 'Visualización', 'Modelado'],
+  },
+  {
+    title: 'Herramientas',
+    icon: <GitBranch className="w-6 h-6 text-[#fbbdeb]" />,
+    skills: ['Git', 'GitHub', 'Metodologías Ágiles'],
+  },
 ];
-
-function SkillPill({ name }) {
-  return (
-    <span className="px-3 py-1.5 bg-royal-purple-800/50 border border-royal-purple-700/50 text-royal-purple-200 text-sm rounded-full hover:bg-royal-purple-700/60 hover:border-royal-purple-500/70 hover:text-white transition-all cursor-default select-none">
-      {name}
-    </span>
-  );
-}
 
 export default function Skills() {
   return (
-    <section id="habilidades" className="py-20 px-6 border-t border-royal-purple-800/40">
-      <div className="max-w-5xl mx-auto">
-
-        {/* Encabezado */}
-        <p className="text-royal-purple-400 text-sm font-semibold uppercase tracking-widest mb-2 text-center">
-          Mi stack
-        </p>
-        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-14">
-          Habilidades
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-          {/* ── Panel: Análisis de Datos ────────────────────────────────── */}
-          <div className="bg-royal-purple-950 border border-royal-purple-800/50 rounded-2xl p-7 hover:border-royal-purple-600/50 transition-all duration-300">
-
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-9 h-9 rounded-lg bg-royal-purple-700/60 text-royal-purple-300 flex items-center justify-center">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
-                </svg>
-              </div>
-              <h3 className="text-white font-semibold text-lg">Análisis de Datos</h3>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {dataSkills.map(s => <SkillPill key={s} name={s} />)}
-              {/* Agrega más habilidades de datos aquí */}
-            </div>
-          </div>
-
-          {/* ── Panel: Desarrollo de Software ──────────────────────────── */}
-          <div className="bg-royal-purple-950 border border-royal-purple-800/50 rounded-2xl p-7 hover:border-royal-purple-600/50 transition-all duration-300">
-
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-9 h-9 rounded-lg bg-royal-purple-700/60 text-royal-purple-300 flex items-center justify-center">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-                </svg>
-              </div>
-              <h3 className="text-white font-semibold text-lg">Desarrollo de Software</h3>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {devSkills.map(s => <SkillPill key={s} name={s} />)}
-              {/* Agrega más habilidades de desarrollo aquí */}
-            </div>
-          </div>
-
+    <section className="py-24 px-8 md:px-20 bg-[#0f070b]">
+      <div className="max-w-6xl mx-auto">
+        
+        <div className="text-center mb-16">
+          <p className="text-[#fbbdeb] text-sm font-semibold uppercase tracking-widest mb-3">
+            Mi Stack
+          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
+            Tecnologías
+          </h2>
         </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {categories.map((cat, i) => (
+            <motion.div
+              key={cat.title}
+              className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-[#fbbdeb]/40 transition-all duration-300"
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center gap-4 mb-6 border-b border-white/10 pb-4">
+                <div className="w-12 h-12 rounded-xl bg-[#fbbdeb]/10 flex items-center justify-center">
+                  {cat.icon}
+                </div>
+                <h3 className="text-white font-bold text-xl">{cat.title}</h3>
+              </div>
+              <ul className="flex flex-col gap-3">
+                {cat.skills.map((skill) => (
+                  <li key={skill} className="text-white/80 flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#fbbdeb]/60"></span>
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+
       </div>
     </section>
   );

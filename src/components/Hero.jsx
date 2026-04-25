@@ -1,70 +1,77 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+
 export default function Hero() {
   return (
     <section
-      id="inicio"
-      className="min-h-screen flex items-center pt-20 pb-16 px-6"
+      className="relative min-h-[90vh] flex items-center justify-center py-20 md:py-28 px-8 md:px-20 bg-[#0f070b]"
     >
-      <div className="max-w-5xl mx-auto w-full flex flex-col-reverse md:flex-row items-center gap-12">
+      {/* Resplandor radial de fondo */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+        <div className="w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-[#fbbdeb]/10 rounded-full blur-[120px] md:blur-[150px]"></div>
+      </div>
 
-        {/* Texto principal */}
-        <div className="flex-1 text-center md:text-left">
-          {/* Cambia la presentación por tu nombre y rol */}
-          <p className="text-soft-orchid-400 font-semibold text-sm uppercase tracking-widest mb-3">
-            Estadística · Análisis · Desarrollo
-          </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-transparent bg-clip-text bg-gradient-to-r from-soft-orchid-200 to-soft-orchid-400">
-            Lógica estadística aplicada al{' '}
-            <span className="text-soft-orchid-400">
-              desarrollo de software
-            </span>{' '}
-            y análisis de datos.
-          </h1>
+      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10">
 
-          {/* Cambia esta descripción por una breve presentación tuya */}
-          <p className="text-soft-orchid-300 text-lg leading-relaxed mb-8 max-w-xl mx-auto md:mx-0">
-            Hola, soy <strong className="text-white">Jasbleidy Higuera</strong> — estudiante de Estadística y Desarrolladora de Software con pasión por convertir datos en soluciones reales.
-          </p>
+        {/* Columna Izquierda: Identidad Minimalista */}
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
 
-          {/* Botones CTA */}
-          <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+          <motion.h1
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight tracking-tight"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            Jasbleydy Tatiana <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fbbdeb] to-[#fbbdeb]/70">
+              Camacho Higuera
+            </span>
+          </motion.h1>
+
+          <motion.p
+            className="text-white/80 text-xl md:text-2xl font-light tracking-wide mb-12"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            Backend Developer & Data Analyst | Java, SQL, Python
+          </motion.p>
+
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
             <a
-              href="#proyectos"
-              className="px-7 py-3 bg-soft-orchid-600 hover:bg-soft-orchid-500 text-white font-semibold rounded-lg shadow-lg shadow-soft-orchid-900/50 transition-all duration-200 hover:-translate-y-0.5"
+              href="#sobre-mi"
+              className="px-10 py-4 bg-transparent border-2 border-[#fbbdeb] text-white font-medium rounded-full hover:bg-[#fbbdeb]/10 hover:border-[#fbbdeb] transition-all duration-300 backdrop-blur-sm"
             >
-              Ver proyectos
+              Explorar portafolio
             </a>
-            <a
-              href="#contacto"
-              className="px-7 py-3 border border-soft-orchid-500 text-soft-orchid-300 hover:bg-soft-orchid-800/40 hover:text-white font-semibold rounded-lg transition-all duration-200 hover:-translate-y-0.5"
-            >
-              Contáctame
-            </a>
-          </div>
+          </motion.div>
         </div>
 
-        {/* Foto de perfil circular */}
-        <div className="flex-shrink-0 flex justify-center">
-          <div className="relative w-52 h-52 md:w-64 md:h-64 rounded-full p-1 bg-gradient-to-br from-soft-orchid-400 via-soft-orchid-600 to-soft-orchid-900 shadow-2xl shadow-soft-orchid-900/60">
-            {/* Cambia /profile.jpg por la ruta real de tu foto de perfil */}
-            <img
-              src="/profile.jpg"
-              alt="Foto de perfil de Jasbleidy Higuera"
-              className="w-full h-full rounded-full object-cover bg-soft-orchid-900"
-              onError={(e) => {
-                // Muestra un placeholder si no existe la imagen
-                e.target.style.display = 'none';
-                e.target.nextSibling.style.display = 'flex';
-              }}
-            />
-            {/* Placeholder visible si /profile.jpg no existe */}
-            <div
-              className="hidden w-full h-full rounded-full bg-soft-orchid-800 items-center justify-center absolute inset-0"
-              aria-hidden="true"
-            >
-              <span className="text-6xl select-none">👩‍💻</span>
+        {/* Columna Derecha: Foto Profesional (Rounded 2xl) */}
+        <motion.div
+          className="flex justify-center lg:justify-end order-1 lg:order-2"
+          initial={{ scale: 0.95, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] rounded-[2rem] border border-[#fbbdeb]/20 shadow-[0_0_50px_0_rgba(251,189,235,0.1)] p-1.5 bg-[#fbbdeb]/5 backdrop-blur-sm overflow-hidden group">
+            <div className="w-full h-full rounded-[1.8rem] bg-gradient-to-br from-[#1a0f18] to-[#0f070b] flex items-center justify-center relative overflow-hidden">
+              <img 
+                src="/src/assets/tech_portrait.png" 
+                alt="Jasbleydy Tatiana Camacho" 
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
             </div>
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>
