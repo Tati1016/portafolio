@@ -94,15 +94,6 @@ export default function Contact() {
             >
               <Linkedin className="w-6 h-6" />
             </a>
-            <a
-              href="https://wa.me/573215012249" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="h-14 px-6 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/20 text-[#25D366] hover:bg-[#25D366] hover:text-white flex items-center justify-center gap-3 transition-all duration-300 hover:-translate-y-1 font-bold"
-            >
-              <MessageCircle className="w-6 h-6" />
-              WhatsApp
-            </a>
           </div>
         </div>
 

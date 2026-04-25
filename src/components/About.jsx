@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Download, Linkedin } from 'lucide-react';
+import { Download, Linkedin, BarChart, Laptop, GraduationCap } from 'lucide-react';
 
 export default function About() {
   return (
@@ -35,20 +35,26 @@ export default function About() {
 
           {/* Bloques destacados (Stat cards) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-[#fbbdeb]/30 transition-all duration-300">
-              <div className="text-3xl mb-3">📊</div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center text-center hover:border-[#fbbdeb]/30 transition-all duration-300">
+              <div className="w-12 h-12 rounded-full bg-[#fbbdeb]/10 flex items-center justify-center text-[#fbbdeb] mb-4">
+                <BarChart className="w-6 h-6" />
+              </div>
               <div className="text-white font-medium text-sm md:text-base leading-snug">
                 3 Papers académicos publicados
               </div>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-[#fbbdeb]/30 transition-all duration-300">
-              <div className="text-3xl mb-3">💻</div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center text-center hover:border-[#fbbdeb]/30 transition-all duration-300">
+              <div className="w-12 h-12 rounded-full bg-[#fbbdeb]/10 flex items-center justify-center text-[#fbbdeb] mb-4">
+                <Laptop className="w-6 h-6" />
+              </div>
               <div className="text-white font-medium text-sm md:text-base leading-snug">
                 2 Proyectos web en producción
               </div>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-[#fbbdeb]/30 transition-all duration-300">
-              <div className="text-3xl mb-3">🎓</div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center text-center hover:border-[#fbbdeb]/30 transition-all duration-300">
+              <div className="w-12 h-12 rounded-full bg-[#fbbdeb]/10 flex items-center justify-center text-[#fbbdeb] mb-4">
+                <GraduationCap className="w-6 h-6" />
+              </div>
               <div className="text-white font-medium text-sm md:text-base leading-snug">
                 Universidad Nacional de Colombia
               </div>
