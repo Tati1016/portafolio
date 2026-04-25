@@ -1,22 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --bg-primary: #0b0f14;
+  --bg-primary: #0B0F14;
   --bg-secondary: #111827;
-  --border-muted: #2d3748;
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --accent: #a855f7;
-  --accent-hover: #c084fc;
+  --bg-accent-card: #151B24;
+  --border-muted: #2D3748;
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --accent: #A855F7;
+  --accent-soft: #C084FC;
+  --accent-hover: #9333EA;
 }
 
 @theme {
   --color-bg-main: var(--bg-primary);
   --color-bg-card: var(--bg-secondary);
+  --color-bg-card-alt: var(--bg-accent-card);
   --color-border-subtle: var(--border-muted);
   --color-txt-main: var(--text-primary);
   --color-txt-muted: var(--text-secondary);
+  --color-txt-dim: var(--text-muted);
   --color-accent-main: var(--accent);
+  --color-accent-soft: var(--accent-soft);
   --color-accent-bright: var(--accent-hover);
   --font-sans: 'Inter', system-ui, sans-serif;
 }
@@ -31,21 +37,19 @@ body {
   min-height: 100vh;
 }
 
-/* Animaciones personalizadas permitidas */
+/* Animaciones personalizadas */
 @keyframes timelinePulse {
   0% {
     opacity: 0.5;
-    box-shadow: 0 0 4px rgba(247, 138, 213, 0.4);
+    box-shadow: 0 0 4px rgba(168, 85, 247, 0.4);
   }
-
   50% {
     opacity: 1;
-    box-shadow: 0 0 12px rgba(247, 138, 213, 0.9);
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.9);
   }
-
   100% {
     opacity: 0.5;
-    box-shadow: 0 0 4px rgba(247, 138, 213, 0.4);
+    box-shadow: 0 0 4px rgba(168, 85, 247, 0.4);
   }
 }
 
