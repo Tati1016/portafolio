@@ -30,23 +30,13 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            className="text-white/80 text-xl md:text-2xl font-light tracking-wide mb-4"
+            className="text-white/80 text-xl md:text-2xl font-light tracking-wide mb-12"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Backend Developer & Data Analyst | Java, SQL, Python
-          </motion.p>
-
-          <motion.p
-            className="text-white/70 text-base md:text-lg font-light tracking-wide mb-12 max-w-2xl"
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            Estudiante de Estadística en la Universidad Nacional de Colombia. Aplico modelos estocásticos, métodos no paramétricos y optimización de portafolios para resolver problemas reales en finanzas, negocios y datos. Trabajo con R, Python y SQL.
+            Estadística · Desarrolladora Backend · Analista de Datos
           </motion.p>
 
           <motion.div

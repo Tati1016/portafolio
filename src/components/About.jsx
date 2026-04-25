@@ -23,15 +23,37 @@ export default function About() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <p className="leading-relaxed mb-8 text-xl md:text-2xl font-medium text-white">
-            Soy estudiante de <span className="text-[#fbbdeb]">Estadística</span> en la Universidad Nacional de Colombia y del <span className="text-[#fbbdeb]">Tecnólogo en Análisis y Desarrollo de Software</span> en el SENA. Desde siempre, me ha fascinado descubrir las historias que se esconden detrás de los datos.
+          <p className="leading-relaxed mb-6">
+            Soy estudiante de <span className="text-[#fbbdeb]">Estadística</span> en la Universidad Nacional de Colombia y <span className="text-[#fbbdeb]">Tecnóloga en Análisis y Desarrollo de Software</span> del SENA. Me apasiona descubrir las historias que se esconden detrás de los datos.
           </p>
-          <p className="leading-relaxed mb-6 block w-full text-center">
-            En mi día a día, combino lo mejor de dos mundos: la <strong className="font-semibold text-white">precisión analítica de la estadística</strong> y el poder de construcción de la programación. Mi fuerte es el desarrollo Backend con Java, donde diseño tanto la arquitectura de las bases de datos como las APIs necesarias para procesar grandes volúmenes de información de forma rápida y segura.
+          <p className="leading-relaxed mb-6">
+            Combino precisión analítica con desarrollo backend. Diseño arquitecturas de bases de datos y APIs en Java para procesar grandes volúmenes de información. Antes de programar una solución, la entiendo con datos.
           </p>
-          <p className="leading-relaxed block w-full text-center">
-            Para mí, el código cobra verdadero sentido cuando resuelve preguntas reales. Disfruto profundamente del <strong className="font-semibold text-white">análisis de datos</strong> porque me permite entender a fondo un problema antes de programar su solución. Mi mayor objetivo es crear sistemas que no solo almacenen información, sino que la transformen en conocimiento útil para tomar grandes decisiones.
+          <p className="leading-relaxed mb-12 text-[#fbbdeb] font-semibold text-xl md:text-2xl italic">
+            "Mi objetivo es crear sistemas que no solo almacenen información, sino que la transformen en conocimiento útil para tomar decisiones."
           </p>
+
+          {/* Bloques destacados (Stat cards) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-[#fbbdeb]/30 transition-all duration-300">
+              <div className="text-3xl mb-3">📊</div>
+              <div className="text-white font-medium text-sm md:text-base leading-snug">
+                3 Papers académicos publicados
+              </div>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-[#fbbdeb]/30 transition-all duration-300">
+              <div className="text-3xl mb-3">💻</div>
+              <div className="text-white font-medium text-sm md:text-base leading-snug">
+                2 Proyectos web en producción
+              </div>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-[#fbbdeb]/30 transition-all duration-300">
+              <div className="text-3xl mb-3">🎓</div>
+              <div className="text-white font-medium text-sm md:text-base leading-snug">
+                Universidad Nacional de Colombia
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         {/* Botones de Acción */}
