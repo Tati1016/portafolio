@@ -16,7 +16,7 @@ const categories = [
   {
     title: 'Herramientas',
     icon: <Code2 className="w-6 h-6 text-[#fbbdeb]" />,
-    skills: ['R', 'Python', 'SQL', 'Java', 'EasyFit', 'Excel'],
+    skills: ['R', 'Python', 'SQL', 'Java', 'Spring Boot', 'Pandas', 'NumPy', 'Git & GitHub', 'EasyFit', 'Excel'],
   },
   {
     title: 'Datos',

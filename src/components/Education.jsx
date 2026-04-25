@@ -6,7 +6,7 @@ const education = [
   {
     degree: 'Pregrado en Estadística',
     institution: 'Universidad Nacional de Colombia',
-    period: '2023 - Actualidad',
+    period: '2022 - Actualidad',
   },
   {
     degree: 'Análisis y Desarrollo de Software',

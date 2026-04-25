@@ -11,7 +11,6 @@ const researches = [
     tools: ['Cadenas de Markov', 'R', 'Simulación', 'Telco Churn'],
     institution: 'Universidad Nacional de Colombia',
     link: '/papers/markov.pdf',
-    codeLink: '/papers/complementos/markov_data/',
   },
   {
     title: 'Comparación No Paramétrica de Rendimientos: Criptomonedas vs Acciones Tradicionales',
