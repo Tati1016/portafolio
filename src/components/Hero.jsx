@@ -30,7 +30,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            className="text-white/80 text-xl md:text-2xl font-light tracking-wide mb-12"
+            className="text-white/80 text-xl md:text-2xl font-light tracking-wide mb-4"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -39,17 +39,35 @@ export default function Hero() {
             Backend Developer & Data Analyst | Java, SQL, Python
           </motion.p>
 
+          <motion.p
+            className="text-white/70 text-base md:text-lg font-light tracking-wide mb-12 max-w-2xl"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            Estudiante de Estadística en la Universidad Nacional de Colombia. Aplico modelos estocásticos, métodos no paramétricos y optimización de portafolios para resolver problemas reales en finanzas, negocios y datos. Trabajo con R, Python y SQL.
+          </motion.p>
+
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
+            className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
           >
             <a
-              href="#sobre-mi"
-              className="px-10 py-4 bg-transparent border-2 border-[#fbbdeb] text-white font-medium rounded-full hover:bg-[#fbbdeb]/10 hover:border-[#fbbdeb] transition-all duration-300 backdrop-blur-sm"
+              href="#desarrollo"
+              className="px-8 py-3 bg-transparent border-2 border-white/80 text-white font-medium rounded-full hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-sm text-center"
             >
-              Explorar portafolio
+              Ver proyectos
+            </a>
+            <a
+              href="/CV.pdf"
+              download
+              className="px-8 py-3 bg-[#e879a0] border-2 border-[#e879a0] text-white font-medium rounded-full hover:bg-[#d4658b] hover:border-[#d4658b] transition-all duration-300 shadow-[0_0_15px_rgba(232,121,160,0.3)] hover:shadow-[0_0_25px_rgba(232,121,160,0.5)] text-center"
+            >
+              Descargar CV
             </a>
           </motion.div>
         </div>
@@ -62,10 +80,10 @@ export default function Hero() {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] rounded-[2rem] border border-[#fbbdeb]/20 shadow-[0_0_50px_0_rgba(251,189,235,0.1)] p-1.5 bg-[#fbbdeb]/5 backdrop-blur-sm overflow-hidden group">
-            <div className="w-full h-full rounded-[1.8rem] bg-gradient-to-br from-[#1a0f18] to-[#0f070b] flex items-center justify-center relative overflow-hidden">
+          <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] rounded-[2rem] border border-[#e879a0]/30 shadow-[0_0_50px_0_rgba(232,121,160,0.2)] p-1.5 bg-[#e879a0]/5 backdrop-blur-sm overflow-hidden group hover:shadow-[0_0_80px_0_rgba(232,121,160,0.4)] transition-all duration-500">
+            <div className="w-full h-full rounded-[1.8rem] bg-[#0f070b] flex items-center justify-center relative overflow-hidden border border-[#e879a0]/20">
               <img 
-                src="/src/assets/tech_portrait.png" 
+                src="/perfil.png" 
                 alt="Jasbleydy Tatiana Camacho" 
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />

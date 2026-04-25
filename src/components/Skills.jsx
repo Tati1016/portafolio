@@ -1,27 +1,27 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Server, LineChart, GitBranch } from 'lucide-react';
+import { Code2, Server, LineChart, GitBranch, Briefcase, Database } from 'lucide-react';
 
 const categories = [
   {
-    title: 'Lenguajes',
-    icon: <Code2 className="w-6 h-6 text-[#fbbdeb]" />,
-    skills: ['Java', 'Python', 'R', 'SQL'],
-  },
-  {
-    title: 'Backend',
-    icon: <Server className="w-6 h-6 text-[#fbbdeb]" />,
-    skills: ['Spring Boot', 'Spring Security', 'Hibernate'],
-  },
-  {
-    title: 'Datos',
+    title: 'Estadística',
     icon: <LineChart className="w-6 h-6 text-[#fbbdeb]" />,
-    skills: ['Análisis Estadístico', 'Visualización', 'Modelado'],
+    skills: ['Procesos Estocásticos', 'Métodos No Paramétricos', 'Optimización'],
+  },
+  {
+    title: 'Finanzas',
+    icon: <Briefcase className="w-6 h-6 text-[#fbbdeb]" />,
+    skills: ['Portafolios', 'Riesgo', 'Mercados Financieros'],
   },
   {
     title: 'Herramientas',
-    icon: <GitBranch className="w-6 h-6 text-[#fbbdeb]" />,
-    skills: ['Git', 'GitHub', 'Metodologías Ágiles'],
+    icon: <Code2 className="w-6 h-6 text-[#fbbdeb]" />,
+    skills: ['R', 'Python', 'SQL', 'Java', 'EasyFit', 'Excel'],
+  },
+  {
+    title: 'Datos',
+    icon: <Database className="w-6 h-6 text-[#fbbdeb]" />,
+    skills: ['Yahoo Finance', 'Kaggle', 'Datos Reales de Mercado'],
   },
 ];
 

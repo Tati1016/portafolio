@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Award, ExternalLink, Eye, X, AlertTriangle } from 'lucide-react';
+import { Award, ExternalLink, Eye, X, AlertTriangle, FileText } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
@@ -217,15 +217,21 @@ export default function Certificates() {
               {/* PDF Viewer */}
               <div className="flex-1 relative bg-[#151015] min-h-0">
                 {iframeError ? (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
-                    <AlertTriangle size={48} className="text-[#febc2e] mb-5 opacity-90" />
-                    <h4 className="text-white text-xl font-bold mb-3">
-                      No se pudo cargar la vista previa
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 bg-[#1a1116]/50">
+                    <FileText size={56} className="text-[#fbbdeb] mb-5 opacity-80" />
+                    <h4 className="text-white text-xl md:text-2xl font-bold mb-3">
+                      {selected.title}
                     </h4>
-                    <p className="text-white/50 text-sm max-w-sm mb-6">
-                      Tu navegador no admite la visualización de PDF en línea.
-                      Usa el botón de abajo para abrir el archivo directamente.
+                    <p className="text-white/50 text-sm max-w-sm mb-8">
+                      Tu navegador ha bloqueado la previsualización en línea. Haz clic en el botón inferior para abrir el documento directamente.
                     </p>
+                    <button
+                      onClick={handleVerify}
+                      className="inline-flex items-center gap-2.5 bg-[#fbbdeb]/10 border border-[#fbbdeb]/20 hover:bg-[#fbbdeb]/20 text-[#fbbdeb] font-bold text-sm px-6 py-3 rounded-xl cursor-pointer transition-all duration-300"
+                    >
+                      <ExternalLink size={18} />
+                      Abrir Credencial Original
+                    </button>
                   </div>
                 ) : (
                   <iframe

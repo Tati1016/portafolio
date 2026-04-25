@@ -5,26 +5,29 @@ import { FileText, Eye, ExternalLink, X, AlertTriangle, FlaskConical, Code } fro
 /* ──────────────────────── DATA ──────────────────────── */
 const researches = [
   {
-    title: 'Composición de Carteras de Inversión',
-    description:
-      'Optimización de portafolios financieros mediante la Teoría de Markowitz, analizando activos de los sectores tecnológico y energético (AAPL, MSFT, EC). Implementación de modelos de probabilidad con EasyFit para identificar riesgos de asimetría y colas pesadas, logrando una estructura de mínima varianza con un rigor estadístico superior a los modelos de normalidad tradicionales.',
-    tools: ['Markowitz', 'EasyFit', 'Mínima Varianza'],
-    link: '/papers/inversion.pdf',
-  },
-  {
-    title: 'Modelado del Comportamiento del Cliente',
-    description:
-      'Modelado predictivo de retención y deserción de clientes (Churn Analysis) utilizando Cadenas de Markov en tiempo discreto. Análisis basado en el dataset Telco con más de 7,000 registros, estimando matrices de transición y estados de equilibrio en R para proyectar la evolución de cohortes y diseñar estrategias de fidelización fundamentadas en procesos estocásticos.',
-    tools: ['R', 'Cadenas de Markov', 'Churn Analysis'],
+    title: 'Modelado del Comportamiento del Cliente: Retención y Deserción con Cadena de Markov',
+    type: 'Procesos Estocásticos',
+    description: 'Modelo de Cadena de Markov en tiempo discreto sobre datos reales de 7.403 clientes de telecomunicaciones. Simulación de cohorte de 1000 clientes a 12 meses con estimación empírica de matriz de transición.',
+    tools: ['Cadenas de Markov', 'R', 'Simulación', 'Telco Churn'],
+    institution: 'Universidad Nacional de Colombia',
     link: '/papers/markov.pdf',
     codeLink: '/papers/complementos/markov_data/',
   },
   {
-    title: 'Inferencia Estadística No Paramétrica',
-    description:
-      'Estudio comparativo de volatilidad entre activos tradicionales (Apple, Tesla) y criptomonedas (BTC, ETH) mediante métodos no paramétricos. Aplicación de pruebas de bondad de ajuste y análisis de momentos para caracterizar distribuciones de cola pesada, demostrando la superioridad de la inferencia no paramétrica en entornos de alta incertidumbre y distribuciones no gaussianas.',
-    tools: ['No Paramétrica', 'Bondad de Ajuste', 'Análisis de Volatilidad'],
+    title: 'Comparación No Paramétrica de Rendimientos: Criptomonedas vs Acciones Tradicionales',
+    type: 'Métodos No Paramétricos',
+    description: 'Análisis comparativo de BTC, ETH, AAPL, TSLA y Ecopetrol (2022–2025) usando pruebas KS y Anderson-Darling con bootstrap paramétrico. Se identificó ajuste Laplace en criptos y Logística en acciones tradicionales.',
+    tools: ['KS', 'Anderson-Darling', 'Bootstrap', 'R', 'Yahoo Finance'],
+    institution: 'Universidad Nacional de Colombia',
     link: '/papers/no-parametrica.pdf',
+  },
+  {
+    title: 'Composición de Carteras de Inversión de Mínima Varianza',
+    type: 'Modelos de Inversión y Finanzas',
+    description: 'Construcción de portafolio óptimo (AAPL 42%, MSFT 38%, EC 20%) usando teoría de Markowitz. Ajuste de distribuciones Dagum, Burr y Log-Logística con EasyFit. Volatilidad anualizada resultante: 17.37%.',
+    tools: ['Markowitz', 'EasyFit', 'R', 'Optimización', 'Portafolios'],
+    institution: 'Universidad Nacional de Colombia',
+    link: '/papers/inversion.pdf',
   },
 ];
 
@@ -113,18 +116,33 @@ export default function ResearchSection() {
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-gradient-to-br from-[#fbbdeb]/[0.03] via-transparent to-transparent" />
 
                 <div className="p-8 flex flex-col flex-1 relative z-10">
-                  {/* Icon */}
-                  <div className="w-12 h-12 rounded-xl bg-[#fbbdeb]/10 text-[#fbbdeb] flex items-center justify-center mb-6">
-                    <FlaskConical size={24} />
+                  {/* Icon & Type */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-[#fbbdeb]/10 text-[#fbbdeb] flex items-center justify-center">
+                      <FlaskConical size={24} />
+                    </div>
+                    {item.type && (
+                      <span className="text-[#fbbdeb] text-[10px] md:text-xs font-semibold tracking-wider uppercase bg-[#fbbdeb]/5 px-3 py-1 rounded-full border border-[#fbbdeb]/10 text-right">
+                        {item.type}
+                      </span>
+                    )}
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-white font-bold text-lg leading-snug mb-1">
+                  <h3 className="text-white font-bold text-lg leading-snug mb-2">
                     {item.title}
                   </h3>
 
+                  {/* Institution */}
+                  {item.institution && (
+                    <p className="text-white/40 text-[10px] md:text-xs uppercase tracking-wider mb-2 flex items-center gap-2">
+                      <span className="w-1 h-1 rounded-full bg-white/30" />
+                      {item.institution}
+                    </p>
+                  )}
+
                   {/* Description */}
-                  <p className="text-white/60 text-sm leading-relaxed mb-6 flex-1 mt-2">
+                  <p className="text-white/60 text-sm leading-relaxed mb-6 flex-1 mt-1">
                     {item.description}
                   </p>
 
