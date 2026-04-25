@@ -1,23 +1,43 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, MessageCircle, Send } from 'lucide-react';
 
 const EMAIL = 'jasbleydyhiguera@gmail.com';
 const LOCATION = 'Bogotá, Colombia';
+// Reemplaza esto con tu ID de Formspree una vez que te registres en formspree.io
+const FORMSPREE_ID = 'your_id_here'; 
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aquí puedes conectar el formulario a un servicio como Formspree o EmailJS
-    console.log(formData);
-    alert("Mensaje enviado (Simulado para este portafolio)");
-    setFormData({ name: '', email: '', message: '' });
+    setStatus('sending');
+
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        alert("¡Mensaje enviado con éxito! Te contactaré pronto.");
+      } else {
+        setStatus('error');
+        alert("Hubo un error. Por favor, usa mi correo directo o regístrate en Formspree.");
+      }
+    } catch (error) {
+      setStatus('error');
+      alert("No se pudo enviar el mensaje. Revisa tu conexión.");
+    }
   };
 
   return (
@@ -55,13 +75,14 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Redes Sociales */}
-          <div className="flex items-center gap-4">
+          {/* Redes Sociales y WhatsApp */}
+          <div className="flex flex-wrap items-center gap-4">
             <a
               href="https://github.com/Tati1016"
               target="_blank"
               rel="noopener noreferrer"
               className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 text-white hover:border-[#fbbdeb]/40 hover:text-[#fbbdeb] flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
+              title="GitHub"
             >
               <Github className="w-6 h-6" />
             </a>
@@ -70,8 +91,18 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 text-white hover:border-[#fbbdeb]/40 hover:text-[#fbbdeb] flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
+              title="LinkedIn"
             >
               <Linkedin className="w-6 h-6" />
+            </a>
+            <a
+              href="https://wa.me/573133644400" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-14 px-6 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/20 text-[#25D366] hover:bg-[#25D366] hover:text-white flex items-center justify-center gap-3 transition-all duration-300 hover:-translate-y-1 font-bold"
+            >
+              <MessageCircle className="w-6 h-6" />
+              WhatsApp
             </a>
           </div>
         </div>
@@ -129,9 +160,17 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="w-full py-4 mt-2 bg-[#fbbdeb] text-[#0f070b] font-bold rounded-xl hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(251,189,235,0.2)] hover:shadow-[0_0_30px_rgba(251,189,235,0.4)]"
+              disabled={status === 'sending'}
+              className={`w-full py-4 mt-2 flex items-center justify-center gap-2 font-bold rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(251,189,235,0.2)] hover:shadow-[0_0_30px_rgba(251,189,235,0.4)] ${
+                status === 'sending' ? 'bg-white/20 text-white/50 cursor-not-allowed' : 'bg-[#fbbdeb] text-[#0f070b] hover:bg-white'
+              }`}
             >
-              Enviar Mensaje
+              {status === 'sending' ? 'Enviando...' : (
+                <>
+                  <Send className="w-5 h-5" />
+                  Enviar Mensaje
+                </>
+              )}
             </button>
           </form>
         </motion.div>
