@@ -21,12 +21,12 @@ export default function ActionButtons({ className = '' }) {
         Descargar CV Completo
       </a>
 
-      {/* Botón Secundario: LinkedIn */}
+      {/* Botón Secundario: LinkedIn — ghost neutro */}
       <a
         href="https://linkedin.com/in/jasbleydy-camacho-233526278"
         target="_blank"
         rel="noopener noreferrer"
-        className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-accent-main text-txt-main font-medium rounded-full hover:bg-accent-main/10 transition-all duration-300 text-base"
+        className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-border-subtle text-txt-muted font-medium rounded-full hover:border-txt-main hover:text-txt-main transition-all duration-300 text-base"
       >
         <Linkedin className="w-4 h-4" />
         Conectar en LinkedIn

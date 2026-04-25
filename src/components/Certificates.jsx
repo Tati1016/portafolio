@@ -126,7 +126,7 @@ export default function Certificates() {
                     <div className="mt-auto pt-4 border-t border-border-subtle/30">
                       <button
                         onClick={() => handleOpen(cert)}
-                        className="w-full flex items-center justify-center gap-2 text-accent-main bg-accent-main/5 border border-accent-main/20 rounded-xl py-3 text-sm font-semibold hover:bg-accent-main hover:text-bg-main transition-all duration-300 cursor-pointer"
+                        className="w-full flex items-center justify-center gap-2 bg-accent-main text-bg-main rounded-xl py-3 text-sm font-bold hover:bg-accent-bright transition-all duration-300 cursor-pointer shadow-md shadow-accent-main/20"
                       >
                         <Eye size={16} /> Ver Credencial
                       </button>

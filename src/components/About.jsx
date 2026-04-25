@@ -73,7 +73,7 @@ export default function About() {
           <a
             href="/CV.pdf"
             download
-            className="flex items-center justify-center gap-2 w-full sm:w-auto px-10 py-4 bg-accent-main text-bg-main font-bold rounded-full hover:bg-accent-bright transition-all duration-300 shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:shadow-[0_0_35px_rgba(168,85,247,0.6)] text-base"
+            className="flex items-center justify-center gap-2 w-full sm:w-auto px-10 py-4 bg-accent-main text-bg-main font-bold rounded-full hover:bg-accent-bright transition-all duration-300 shadow-lg shadow-accent-main/25 text-base"
           >
             <Download className="w-5 h-5 flex-shrink-0" />
             Descargar CV

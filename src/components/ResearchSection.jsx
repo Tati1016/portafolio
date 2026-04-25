@@ -128,7 +128,7 @@ export default function ResearchSection() {
                     <button
                       type="button"
                       onClick={() => handleOpen(item)}
-                      className="w-full flex items-center justify-center gap-2 text-accent-main bg-accent-main/5 border border-accent-main/20 rounded-xl py-3 text-sm font-semibold hover:bg-accent-main hover:text-bg-main transition-all duration-300 cursor-pointer"
+                      className="w-full flex items-center justify-center gap-2 bg-accent-main text-bg-main rounded-xl py-3 text-sm font-bold hover:bg-accent-bright transition-all duration-300 cursor-pointer shadow-md shadow-accent-main/20"
                     >
                       <FileText size={16} /> Leer Paper
                     </button>
@@ -138,7 +138,7 @@ export default function ResearchSection() {
                         href={item.codeLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full flex items-center justify-center gap-2 text-accent-main bg-transparent border border-accent-main/20 rounded-xl py-3 text-sm font-semibold hover:bg-accent-main hover:text-bg-main transition-all duration-300 cursor-pointer"
+                        className="w-full flex items-center justify-center gap-2 text-txt-muted bg-transparent border border-border-subtle rounded-xl py-3 text-sm font-semibold hover:border-accent-main/40 hover:text-txt-main transition-all duration-300 cursor-pointer"
                       >
                         <Code size={16} /> Ver Código R
                       </a>
