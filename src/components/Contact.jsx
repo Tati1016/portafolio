@@ -4,8 +4,8 @@ import { Github, Linkedin, Mail, MessageCircle, Send } from 'lucide-react';
 
 const EMAIL = 'jasbleydyhiguera@gmail.com';
 const LOCATION = 'Bogotá, Colombia';
-// Reemplaza esto con tu ID de Formspree una vez que te registres en formspree.io
-const FORMSPREE_ID = 'your_id_here'; 
+// Tu ID de Formspree configurado
+const FORMSPREE_ID = 'xjgjzyep'; 
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -32,7 +32,7 @@ export default function Contact() {
         alert("¡Mensaje enviado con éxito! Te contactaré pronto.");
       } else {
         setStatus('error');
-        alert("Hubo un error. Por favor, usa mi correo directo o regístrate en Formspree.");
+        alert("Hubo un error. Por favor, usa mi correo directo.");
       }
     } catch (error) {
       setStatus('error');
@@ -96,7 +96,7 @@ export default function Contact() {
               <Linkedin className="w-6 h-6" />
             </a>
             <a
-              href="https://wa.me/573133644400" 
+              href="https://wa.me/573215012249" 
               target="_blank"
               rel="noopener noreferrer"
               className="h-14 px-6 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/20 text-[#25D366] hover:bg-[#25D366] hover:text-white flex items-center justify-center gap-3 transition-all duration-300 hover:-translate-y-1 font-bold"
