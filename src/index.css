@@ -1,18 +1,23 @@
 @import "tailwindcss";
 
+:root {
+  --bg-primary: #0b0f14;
+  --bg-secondary: #111827;
+  --border-muted: #2d3748;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent: #a855f7;
+  --accent-hover: #c084fc;
+}
+
 @theme {
-  --color-soft-orchid-50: #fff5fb;
-  --color-soft-orchid-100: #fde6f7;
-  --color-soft-orchid-200: #fbbdeb;
-  --color-soft-orchid-300: #f78ad5;
-  --color-soft-orchid-400: #f059bc;
-  --color-soft-orchid-500: #e1339d;
-  --color-soft-orchid-600: #c61d7d;
-  --color-soft-orchid-700: #a41664;
-  --color-soft-orchid-800: #881654;
-  --color-soft-orchid-900: #721749;
-  --color-soft-orchid-950: #46062a;
-  --color-deep-night: #0f070b;
+  --color-bg-main: var(--bg-primary);
+  --color-bg-card: var(--bg-secondary);
+  --color-border-subtle: var(--border-muted);
+  --color-txt-main: var(--text-primary);
+  --color-txt-muted: var(--text-secondary);
+  --color-accent-main: var(--accent);
+  --color-accent-bright: var(--accent-hover);
   --font-sans: 'Inter', system-ui, sans-serif;
 }
 
@@ -21,7 +26,7 @@ html {
 }
 
 body {
-  @apply bg-deep-night text-white antialiased font-sans;
+  @apply bg-bg-main text-txt-main antialiased font-sans;
   margin: 0;
   min-height: 100vh;
 }

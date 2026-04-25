@@ -10,7 +10,7 @@ import Contact from './components/Contact';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#0f070b] text-white font-sans overflow-x-hidden relative">
+    <div className="min-h-screen bg-bg-main text-txt-main font-sans overflow-x-hidden relative">
       <Navbar />
 
       <main className="relative z-10 w-full flex flex-col">

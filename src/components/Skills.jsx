@@ -1,72 +1,66 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Server, LineChart, GitBranch, Briefcase, Database } from 'lucide-react';
+import { Database, Code2, LineChart, Cpu, Settings, Globe } from 'lucide-react';
 
-const categories = [
+const SKILLS = [
   {
-    title: 'Estadística',
-    icon: <LineChart className="w-6 h-6 text-[#fbbdeb]" />,
-    skills: ['Procesos Estocásticos', 'Métodos No Paramétricos', 'Optimización'],
+    category: "Estadística & Datos",
+    icon: <LineChart className="w-6 h-6" />,
+    items: ["R", "Python", "Pandas", "NumPy", "Modelado Estadístico", "SQL"]
   },
   {
-    title: 'Finanzas',
-    icon: <Briefcase className="w-6 h-6 text-[#fbbdeb]" />,
-    skills: ['Portafolios', 'Riesgo', 'Mercados Financieros'],
+    category: "Desarrollo Backend",
+    icon: <Code2 className="w-6 h-6" />,
+    items: ["Java", "Spring Boot", "Firebase", "REST APIs", "MVC"]
   },
   {
-    title: 'Herramientas',
-    icon: <Code2 className="w-6 h-6 text-[#fbbdeb]" />,
-    skills: ['R', 'Python', 'SQL', 'Java', 'Spring Boot', 'Pandas', 'NumPy', 'Git & GitHub', 'EasyFit', 'Excel'],
-  },
-  {
-    title: 'Datos',
-    icon: <Database className="w-6 h-6 text-[#fbbdeb]" />,
-    skills: ['Yahoo Finance', 'Kaggle', 'Datos Reales de Mercado'],
-  },
+    category: "Infraestructura & Herramientas",
+    icon: <Cpu className="w-6 h-6" />,
+    items: ["Git & GitHub", "Vercel", "DBeaver", "Postman", "Arquitectura de Software"]
+  }
 ];
 
 export default function Skills() {
   return (
-    <section className="py-24 px-8 md:px-20 bg-[#0f070b]">
+    <section id="habilidades" className="py-24 px-8 md:px-20 bg-bg-main">
       <div className="max-w-6xl mx-auto">
         
-        <div className="text-center mb-16">
-          <p className="text-[#fbbdeb] text-sm font-semibold uppercase tracking-widest mb-3">
-            Mi Stack
+        <div className="text-center mb-20">
+          <p className="text-accent-main text-sm font-bold uppercase tracking-[0.2em] mb-4">
+            Especialización
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Tecnologías
+          <h2 className="text-4xl md:text-5xl font-bold text-txt-main">
+            Stack Tecnológico
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((cat, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {SKILLS.map((skill, index) => (
             <motion.div
-              key={cat.title}
-              className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-[#fbbdeb]/40 transition-all duration-300"
+              key={skill.category}
+              className="bg-bg-card border border-border-subtle p-8 rounded-3xl hover:border-accent-main/30 transition-all duration-300 shadow-sm"
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="flex items-center gap-4 mb-6 border-b border-white/10 pb-4">
-                <div className="w-12 h-12 rounded-xl bg-[#fbbdeb]/10 flex items-center justify-center">
-                  {cat.icon}
-                </div>
-                <h3 className="text-white font-bold text-xl">{cat.title}</h3>
+              <div className="w-12 h-12 rounded-xl bg-accent-main/10 flex items-center justify-center text-accent-main mb-6">
+                {skill.icon}
               </div>
-              <ul className="flex flex-col gap-3">
-                {cat.skills.map((skill) => (
-                  <li key={skill} className="text-white/80 flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#fbbdeb]/60"></span>
-                    {skill}
-                  </li>
+              <h3 className="text-xl font-bold text-txt-main mb-6">{skill.category}</h3>
+              <div className="flex flex-wrap gap-2.5">
+                {skill.items.map((item) => (
+                  <span
+                    key={item}
+                    className="px-4 py-1.5 bg-bg-main border border-border-subtle text-txt-muted text-sm font-medium rounded-full hover:text-accent-main hover:border-accent-main/40 transition-colors"
+                  >
+                    {item}
+                  </span>
                 ))}
-              </ul>
+              </div>
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );
