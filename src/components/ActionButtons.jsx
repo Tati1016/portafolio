@@ -23,7 +23,7 @@ export default function ActionButtons({ className = '' }) {
 
       {/* Botón Secundario: LinkedIn - Ghost Soft Orchid */}
       <a
-        href="https://www.linkedin.com/in/jasbleydy-camacho-233526278/"
+        href="https://linkedin.com/in/jasbleydy-camacho-233526278"
         target="_blank"
         rel="noopener noreferrer"
         className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-[#fbbdeb] text-white font-medium rounded-full hover:bg-[#fbbdeb]/10 transition-all duration-300 text-base"

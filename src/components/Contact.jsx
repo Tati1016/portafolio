@@ -66,7 +66,7 @@ export default function Contact() {
               <Github className="w-6 h-6" />
             </a>
             <a
-              href="https://www.linkedin.com/in/jasbleydy-camacho-233526278/"
+              href="https://linkedin.com/in/jasbleydy-camacho-233526278"
               target="_blank"
               rel="noopener noreferrer"
               className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 text-white hover:border-[#fbbdeb]/40 hover:text-[#fbbdeb] flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
