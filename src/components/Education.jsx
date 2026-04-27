@@ -11,7 +11,7 @@ const education = [
   {
     degree: 'Análisis y Desarrollo de Software',
     institution: 'SENA',
-    period: '2023 - Actualidad',
+    period: '2024 - Actualidad',
   },
   {
     degree: 'Bachiller Académico',
