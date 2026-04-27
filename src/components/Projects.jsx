@@ -39,78 +39,87 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto">
         
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-txt-main mb-14">
+          <h2 className="text-3xl md:text-4xl font-bold text-txt-main mb-4">
             Proyectos Destacados
           </h2>
+          <p className="text-txt-muted text-base max-w-2xl mx-auto">
+            Explora mis desarrollos más recientes. Pasa el cursor sobre cada proyecto para ver más detalles.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {projects.map((p, i) => (
             <motion.div
               key={p.title}
-              className="bg-bg-card border border-border-subtle rounded-2xl flex flex-col hover:border-accent-main/40 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(168,85,247,0.05)] transition-all duration-300 relative overflow-hidden group"
+              className="bg-bg-card border border-border-subtle rounded-xl flex flex-row hover:border-accent-main/40 hover:shadow-[0_4px_20px_rgba(168,85,247,0.05)] transition-all duration-300 relative group p-4 sm:p-5 gap-4 items-start"
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="relative h-60 md:h-72 w-full overflow-hidden border-b border-border-subtle">
+              {/* Thumbnail */}
+              <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-lg overflow-hidden border border-border-subtle/50 relative">
                 <img 
                   src={p.image} 
                   alt={p.title}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" 
+                  className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" 
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-bg-card to-transparent opacity-90" />
-                <div className="absolute top-4 right-4 flex gap-2">
-                   <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-black/60 backdrop-blur-md text-accent-main text-xs font-semibold rounded-full border border-accent-main/30 shadow-xl">
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+              </div>
+
+              {/* Content */}
+              <div className="flex flex-col flex-1 min-w-0">
+                {/* Header */}
+                <div className="flex justify-between items-start gap-2 w-full">
+                  <div className="flex flex-col min-w-0">
+                    <h3 className="text-txt-main font-bold text-lg leading-tight truncate">{p.title}</h3>
+                    <h4 className="text-txt-muted text-xs font-medium mt-0.5 truncate">{p.subtitle}</h4>
+                  </div>
+                  
+                  {/* Badge */}
+                  <span className="shrink-0 inline-flex items-center gap-1 px-2 py-0.5 bg-accent-main/10 text-accent-main text-[10px] font-bold rounded-md border border-accent-main/20">
                     {p.highlight.icon}
                     {p.highlight.text}
                   </span>
                 </div>
-              </div>
 
-              <div className="p-8 flex flex-col flex-1">
-                <div className="flex flex-col mb-4 gap-2">
-                  <div className="flex flex-col items-start gap-1">
-                    <h3 className="text-txt-main font-bold text-2xl leading-tight">{p.title}</h3>
-                    <h4 className="text-txt-muted text-sm font-medium">{p.subtitle}</h4>
-                  </div>
-                  
-                  <div className="flex flex-wrap items-center gap-3 text-sm mt-2">
-                    <span className="text-accent-main/80 font-medium">{p.type}</span>
-                  </div>
-                </div>
-
-                <p className="text-txt-muted text-base leading-relaxed mb-6 flex-1">
-                  {p.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-2 mb-8 mt-auto">
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1.5 mt-2.5">
                   {p.techs.map((t) => (
-                    <span key={t} className="px-3 py-1 bg-bg-main text-txt-dim text-xs font-medium rounded-full border border-border-subtle">
+                    <span key={t} className="px-2 py-0.5 bg-bg-main text-txt-dim text-[10px] font-medium rounded-md border border-border-subtle/50">
                       {t}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex gap-4 w-full mt-4">
+                {/* Expandable Description */}
+                <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-out">
+                  <div className="overflow-hidden">
+                    <p className="text-txt-muted text-xs leading-relaxed mt-3 pb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                      {p.description}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Actions */}
+                <div className="flex gap-2.5 mt-3 pt-3 border-t border-border-subtle/30 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                   <a
                     href={p.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 py-3 bg-accent-main text-bg-main font-bold rounded-xl hover:bg-accent-bright transition-all duration-300 shadow-lg shadow-accent-main/20"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-accent-main text-bg-main text-xs font-bold rounded-md hover:bg-accent-bright transition-colors"
                   >
-                    <ExternalLink className="w-4 h-4" />
+                    <ExternalLink className="w-3.5 h-3.5" />
                     Ver Demo
                   </a>
                   <a
                     href={p.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 py-3 bg-transparent text-txt-main font-semibold rounded-xl border border-border-subtle hover:bg-bg-main hover:border-accent-main/40 transition-all duration-300"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-transparent text-txt-main text-xs font-semibold rounded-md border border-border-subtle hover:bg-bg-main hover:border-accent-main/40 transition-colors"
                   >
-                    <Code className="w-4 h-4" />
-                    Ver Código
+                    <Code className="w-3.5 h-3.5" />
+                    Código
                   </a>
                 </div>
               </div>
