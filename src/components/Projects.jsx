@@ -72,12 +72,12 @@ export default function Projects() {
                 {/* Header */}
                 <div className="flex justify-between items-start gap-2 w-full">
                   <div className="flex flex-col min-w-0">
-                    <h3 className="text-txt-main font-bold text-lg leading-tight truncate">{p.title}</h3>
-                    <h4 className="text-txt-muted text-xs font-medium mt-0.5 truncate">{p.subtitle}</h4>
+                    <h3 className="text-txt-main font-bold text-lg leading-tight whitespace-normal lg:truncate">{p.title}</h3>
+                    <h4 className="text-txt-muted text-sm lg:text-xs font-medium mt-0.5 whitespace-normal lg:truncate">{p.subtitle}</h4>
                   </div>
                   
                   {/* Badge */}
-                  <span className="shrink-0 inline-flex items-center gap-1 px-2 py-0.5 bg-accent-main/10 text-accent-main text-[10px] font-bold rounded-md border border-accent-main/20">
+                  <span className="shrink-0 inline-flex items-center gap-1 px-2 py-0.5 bg-accent-main/10 text-accent-main text-xs lg:text-[10px] font-bold rounded-md border border-accent-main/20">
                     {p.highlight.icon}
                     {p.highlight.text}
                   </span>
@@ -86,28 +86,28 @@ export default function Projects() {
                 {/* Tags */}
                 <div className="flex flex-wrap gap-1.5 mt-2.5">
                   {p.techs.map((t) => (
-                    <span key={t} className="px-2 py-0.5 bg-bg-main text-txt-dim text-[10px] font-medium rounded-md border border-border-subtle/50">
+                    <span key={t} className="px-2 py-0.5 bg-bg-main text-txt-dim text-xs lg:text-[10px] font-medium rounded-md border border-border-subtle/50">
                       {t}
                     </span>
                   ))}
                 </div>
 
                 {/* Expandable Description */}
-                <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-out">
+                <div className="grid grid-rows-[1fr] lg:grid-rows-[0fr] lg:group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-out">
                   <div className="overflow-hidden">
-                    <p className="text-txt-muted text-xs leading-relaxed mt-3 pb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                    <p className="text-txt-muted text-sm lg:text-xs leading-relaxed mt-3 pb-1 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 lg:delay-100">
                       {p.description}
                     </p>
                   </div>
                 </div>
 
                 {/* Actions */}
-                <div className="flex gap-2.5 mt-3 pt-3 border-t border-border-subtle/30 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="flex gap-2.5 mt-3 pt-3 border-t border-border-subtle/30 opacity-100 lg:opacity-80 lg:group-hover:opacity-100 transition-opacity duration-300">
                   <a
                     href={p.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-accent-main text-bg-main text-xs font-bold rounded-md hover:bg-accent-bright transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 lg:px-3 lg:py-1.5 bg-accent-main text-bg-main text-sm lg:text-xs font-bold rounded-md hover:bg-accent-bright transition-colors"
                   >
                     <ExternalLink className="w-3.5 h-3.5" />
                     Ver Demo
@@ -116,7 +116,7 @@ export default function Projects() {
                     href={p.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-transparent text-txt-main text-xs font-semibold rounded-md border border-border-subtle hover:bg-bg-main hover:border-accent-main/40 transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 lg:px-3 lg:py-1.5 bg-transparent text-txt-main text-sm lg:text-xs font-semibold rounded-md border border-border-subtle hover:bg-bg-main hover:border-accent-main/40 transition-colors"
                   >
                     <Code className="w-3.5 h-3.5" />
                     Código
