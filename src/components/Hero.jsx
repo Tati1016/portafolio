@@ -23,9 +23,9 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            Jasbleydy Tatiana <br className="hidden md:block" />
+            Jasbleydy <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-main to-accent-soft">
-              Camacho Higuera
+              Camacho
             </span>
           </motion.h1>
 

@@ -8,9 +8,6 @@ export default function About() {
       <div className="max-w-4xl mx-auto">
         
         {/* Encabezado */}
-        <p className="text-accent-main text-sm font-semibold uppercase tracking-widest mb-4 text-center">
-          Profundidad
-        </p>
         <h2 className="text-4xl md:text-5xl font-bold text-txt-main text-center mb-14">
           ¿Quién soy?
         </h2>

@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
 const certificates = [
   {
     title: 'Análisis y Visualización de Datos',
-    file: 'Analisis.pdf',
+    file: 'analisis-datos.pdf',
     issuer: 'Talento Tech',
   },
   {
@@ -21,27 +21,27 @@ const certificates = [
   },
   {
     title: 'Desarrollo Personal G7',
-    file: 'DESARROLLO-PERSONAL-G7- ONE.pdf',
+    file: 'desarrollo-personal.pdf',
     issuer: 'Oracle / Alura',
   },
   {
     title: 'Emprendimiento, Agilidad y Protagonismo',
-    file: 'EMPRENDIMIENTO, AGILIDAD Y PROTAGONISMO PROFESIONAL G7 - ONE.pdf',
+    file: 'emprendimiento.pdf',
     issuer: 'Oracle / Alura',
   },
   {
     title: 'Lógica de Programación',
-    file: 'LÓGICA DE PROGRAMACIÓN CON JAVASCRIPT.pdf',
+    file: 'logica-programacion.pdf',
     issuer: 'Oracle / Alura',
   },
   {
     title: 'Principiante en Programación G7',
-    file: 'PRINPRINCIPIANTE EN PROGRAMACIÓN G7 - ONE.pdf',
+    file: 'principiante-programacion.pdf',
     issuer: 'Oracle / Alura',
   },
 ];
 
-const pdfUrl = (filename) => `/${encodeURIComponent(filename)}`;
+const pdfUrl = (filename) => `/${filename}`;
 
 const overlayVariants = {
   hidden: { opacity: 0 },

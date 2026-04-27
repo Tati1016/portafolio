@@ -1,31 +1,49 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FileText, ExternalLink, X, AlertTriangle, FlaskConical, Code } from 'lucide-react';
+import { FileText, ExternalLink, X, AlertTriangle, FlaskConical, Code, Info } from 'lucide-react';
 
 const researches = [
   {
-    title: 'Modelado del Comportamiento del Cliente: Retención y Deserción con Cadena de Markov',
+    shortTitle: 'Retención de Clientes con Cadenas de Markov',
+    fullTitle: 'Modelado del Comportamiento del Cliente: Retención y Deserción con Cadena de Markov',
     type: 'Procesos Estocásticos',
-    description: 'Modelo de Cadena de Markov en tiempo discreto sobre datos reales de 7.403 clientes de telecomunicaciones. Simulación de cohorte de 1000 clientes a 12 meses con estimación empírica de matriz de transición.',
-    tools: ['Cadenas de Markov', 'R', 'Simulación', 'Telco Churn'],
+    color: 'text-cyan-400',
+    bgColor: 'bg-cyan-400/10',
+    borderColor: 'border-cyan-400/20',
+    buttonColor: 'bg-cyan-500 hover:bg-cyan-400',
+    description: 'Modelo de Cadena de Markov en tiempo discreto sobre datos reales de 7.403 clientes de telecomunicaciones. Simulación de cohorte a 12 meses con estimación empírica de matriz de transición.',
+    tools: ['Cadenas de Markov', 'R', 'Simulación'],
     institution: 'Universidad Nacional de Colombia',
     link: '/papers/markov.pdf',
+    image: '/projects/markov_research.png',
   },
   {
-    title: 'Comparación No Paramétrica de Rendimientos: Criptomonedas vs Acciones Tradicionales',
+    shortTitle: 'Criptomonedas vs Acciones Tradicionales',
+    fullTitle: 'Comparación No Paramétrica de Rendimientos: Criptomonedas vs Acciones Tradicionales',
     type: 'Métodos No Paramétricos',
-    description: 'Análisis comparativo de BTC, ETH, AAPL, TSLA y Ecopetrol (2022–2025) usando pruebas KS y Anderson-Darling con bootstrap paramétrico. Se identificó ajuste Laplace en criptos y Logística en acciones tradicionales.',
-    tools: ['KS', 'Anderson-Darling', 'Bootstrap', 'R', 'Yahoo Finance'],
+    color: 'text-amber-400',
+    bgColor: 'bg-amber-400/10',
+    borderColor: 'border-amber-400/20',
+    buttonColor: 'bg-amber-500 hover:bg-amber-400',
+    description: 'Análisis comparativo de BTC, ETH, AAPL y otros (2022–2025) usando pruebas KS y Anderson-Darling con bootstrap paramétrico.',
+    tools: ['KS', 'Anderson-Darling', 'Bootstrap', 'R'],
     institution: 'Universidad Nacional de Colombia',
     link: '/papers/no-parametrica.pdf',
+    image: '/projects/crypto_research.png',
   },
   {
-    title: 'Composición de Carteras de Inversión de Mínima Varianza',
-    type: 'Modelos de Inversión y Finanzas',
-    description: 'Construcción de portafolio óptimo (AAPL 42%, MSFT 38%, EC 20%) usando teoría de Markowitz. Ajuste de distribuciones Dagum, Burr y Log-Logística con EasyFit. Volatilidad anualizada resultante: 17.37%.',
-    tools: ['Markowitz', 'EasyFit', 'R', 'Optimización', 'Portafolios'],
+    shortTitle: 'Carteras de Inversión de Mínima Varianza',
+    fullTitle: 'Composición de Carteras de Inversión de Mínima Varianza',
+    type: 'Modelos de Inversión',
+    color: 'text-emerald-400',
+    bgColor: 'bg-emerald-400/10',
+    borderColor: 'border-emerald-400/20',
+    buttonColor: 'bg-emerald-500 hover:bg-emerald-400',
+    description: 'Construcción de portafolio óptimo usando teoría de Markowitz. Ajuste de distribuciones Dagum y Log-Logística. Volatilidad anualizada: 17.37%.',
+    tools: ['Markowitz', 'EasyFit', 'R', 'Optimización'],
     institution: 'Universidad Nacional de Colombia',
     link: '/papers/inversion.pdf',
+    image: '/projects/portfolio_research.png',
   },
 ];
 
@@ -65,51 +83,61 @@ export default function ResearchSection() {
 
   return (
     <>
-      <section id="investigacion" className="py-24 px-8 md:px-20 bg-bg-main">
+      <section id="investigacion" className="py-24 px-8 md:px-20 bg-bg-main border-y border-border-subtle/20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20 px-4">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-txt-main mb-6">
-              Estadística Aplicada y <span className="text-accent-main">Análisis Cuantitativo</span>
+              Estadística Aplicada
             </h2>
-            <p className="text-txt-muted text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
-              Desarrollo de modelos estadísticos y probabilísticos para resolver problemas complejos, evaluar riesgos y respaldar la toma de decisiones.
+            <p className="text-txt-muted text-lg leading-relaxed max-w-3xl mx-auto">
+              Desarrollo de modelos estadísticos y probabilísticos para resolver problemas complejos y respaldar la toma de decisiones.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8">
             {researches.map((item, i) => (
               <motion.div
-                key={item.title}
-                className="bg-bg-card border border-border-subtle rounded-2xl p-8 flex flex-col hover:border-accent-main/40 transition-all duration-500 relative"
+                key={item.shortTitle}
+                className="bg-bg-card border border-border-subtle rounded-3xl overflow-hidden hover:border-accent-main/30 transition-all duration-500 group flex flex-col md:flex-row"
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
                 viewport={{ once: true }}
               >
-                <div className="flex flex-col h-full">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-accent-main/10 text-accent-main flex items-center justify-center">
-                      <FlaskConical size={24} />
-                    </div>
-                    {item.type && (
-                      <span className="text-accent-main text-[10px] md:text-xs font-semibold tracking-wider uppercase bg-accent-main/5 px-3 py-1 rounded-full border border-accent-main/10 text-right">
-                        {item.type}
-                      </span>
-                    )}
+                {/* Imagen (Lado Izquierdo en Desktop) */}
+                <div className="w-full md:w-2/5 h-64 md:h-auto relative overflow-hidden shrink-0 border-b md:border-b-0 md:border-r border-border-subtle">
+                  <img 
+                    src={item.image} 
+                    alt={item.shortTitle}
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-bg-card via-transparent to-transparent opacity-80 md:hidden" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-bg-card opacity-90 hidden md:block" />
+                  
+                  {/* Badge de Categoría encima de la imagen */}
+                  <div className="absolute top-6 left-6">
+                    <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 ${item.bgColor} ${item.color} border ${item.borderColor} text-xs font-bold uppercase tracking-wider rounded-full backdrop-blur-md shadow-lg`}>
+                      <FlaskConical size={14} />
+                      {item.type}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Contenido (Lado Derecho en Desktop) */}
+                <div className="p-8 md:p-10 flex flex-col justify-center flex-1">
+                  <div className="mb-2">
+                    <h3 className="text-txt-main font-bold text-2xl md:text-3xl leading-snug mb-2 group-hover:text-accent-main transition-colors">
+                      {item.shortTitle}
+                    </h3>
+                    
+                    {/* Tooltip / Subtítulo con el nombre real */}
+                    <p className="text-txt-dim text-xs flex items-start gap-1.5 max-w-xl">
+                      <Info size={14} className="shrink-0 mt-0.5" />
+                      <span><span className="font-semibold text-txt-muted">Paper:</span> {item.fullTitle}</span>
+                    </p>
                   </div>
 
-                  <h3 className="text-txt-main font-bold text-lg leading-snug mb-2">
-                    {item.title}
-                  </h3>
-
-                  {item.institution && (
-                    <p className="text-txt-dim text-[10px] md:text-xs uppercase tracking-wider mb-2 flex items-center gap-2">
-                      <span className="w-1 h-1 rounded-full bg-accent-main/40" />
-                      {item.institution}
-                    </p>
-                  )}
-
-                  <p className="text-txt-muted text-sm leading-relaxed mb-6 flex-1 mt-1">
+                  <p className="text-txt-muted text-base leading-relaxed mb-6 mt-4 max-w-2xl">
                     {item.description}
                   </p>
 
@@ -117,31 +145,25 @@ export default function ResearchSection() {
                     {item.tools.map((t) => (
                       <span
                         key={t}
-                        className="px-3 py-1 bg-bg-main text-txt-muted text-[11px] font-medium rounded-full border border-border-subtle"
+                        className="px-3 py-1 bg-bg-main text-txt-muted text-[11px] font-semibold tracking-wide uppercase rounded-lg border border-border-subtle"
                       >
                         {t}
                       </span>
                     ))}
                   </div>
 
-                  <div className="mt-auto pt-6 border-t border-border-subtle/30 flex flex-col gap-3 relative z-20">
+                  <div className="mt-auto flex items-center gap-4">
                     <button
                       type="button"
                       onClick={() => handleOpen(item)}
-                      className="w-full flex items-center justify-center gap-2 bg-accent-main text-bg-main rounded-xl py-3 text-sm font-bold hover:bg-accent-bright transition-all duration-300 cursor-pointer shadow-md shadow-accent-main/20"
+                      className={`inline-flex items-center justify-center gap-2 ${item.buttonColor} text-white px-6 py-3 rounded-xl text-sm font-bold transition-all duration-300 cursor-pointer shadow-lg`}
                     >
-                      <FileText size={16} /> Leer Paper
+                      <FileText size={18} /> Leer Documento
                     </button>
-                    
-                    {item.codeLink && (
-                      <a
-                        href={item.codeLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full flex items-center justify-center gap-2 text-txt-muted bg-transparent border border-border-subtle rounded-xl py-3 text-sm font-semibold hover:border-accent-main/40 hover:text-txt-main transition-all duration-300 cursor-pointer"
-                      >
-                        <Code size={16} /> Ver Código R
-                      </a>
+                    {item.institution && (
+                      <p className="text-txt-dim text-xs uppercase tracking-wider hidden sm:block font-medium">
+                        {item.institution}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -199,10 +221,10 @@ export default function ResearchSection() {
                   <FileText size={18} className="text-accent-main shrink-0" />
                   <div>
                     <h3 className="text-txt-main font-bold text-base md:text-lg m-0">
-                      {selected.title}
+                      {selected.fullTitle}
                     </h3>
                     <p className="text-txt-muted text-xs md:text-sm m-0 mt-1">
-                      Investigación Técnica — Análisis Profesional
+                      Investigación Técnica — {selected.institution}
                     </p>
                   </div>
                 </div>
@@ -224,7 +246,7 @@ export default function ResearchSection() {
                 ) : (
                   <iframe
                     src={selected.link}
-                    title={selected.title}
+                    title={selected.shortTitle}
                     className="absolute inset-0 w-full h-full border-0"
                     onError={() => setIframeError(true)}
                   />

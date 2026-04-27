@@ -11,7 +11,7 @@ const education = [
   {
     degree: 'Análisis y Desarrollo de Software',
     institution: 'SENA',
-    period: 'En formación',
+    period: '2023 - Actualidad',
   },
   {
     degree: 'Bachiller Académico',
@@ -26,9 +26,6 @@ export default function Education() {
       <div className="max-w-4xl mx-auto">
         
         <div className="text-center mb-16">
-          <p className="text-accent-main text-sm font-semibold uppercase tracking-widest mb-3">
-            Mi Formación
-          </p>
           <h2 className="text-4xl md:text-5xl font-bold text-txt-main">
             Educación
           </h2>

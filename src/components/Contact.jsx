@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Send, Github, Linkedin } from 'lucide-react';
 
-const EMAIL = "tatianacamacho1016@gmail.com";
-const LOCATION = "Yopal, Casanare / Bogotá D.C.";
+const EMAIL = "jasbleydyhiguera@gmail.com";
+const LOCATION = "Bogotá D.C.";
 
 export default function Contact() {
   const [status, setStatus] = useState('');
