@@ -21,7 +21,7 @@ export default function About() {
           viewport={{ once: true }}
         >
           <p className="leading-relaxed mb-6">
-            Soy estudiante de <span className="text-accent-main font-semibold">Estadística</span> en la Universidad Nacional de Colombia y <span className="text-accent-main font-semibold">Tecnóloga en Análisis y Desarrollo de Software</span> del SENA. Me apasiona descubrir las historias que se esconden detrás de los datos.
+            Soy estudiante de <span className="text-accent-main font-semibold">Estadística</span> en la Universidad Nacional de Colombia y de <span className="text-accent-main font-semibold">Tecnología en Análisis y Desarrollo de Software</span> en el SENA. Me apasiona descubrir las historias que se esconden detrás de los datos.
           </p>
           <p className="leading-relaxed mb-6 text-txt-muted">
             Combino precisión analítica con desarrollo backend. Diseño arquitecturas de bases de datos y APIs en Java para procesar grandes volúmenes de información. Antes de programar una solución, la entiendo con datos.

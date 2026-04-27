@@ -94,77 +94,70 @@ export default function ResearchSection() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {researches.map((item, i) => (
               <motion.div
                 key={item.shortTitle}
-                className="bg-bg-card border border-border-subtle rounded-3xl overflow-hidden hover:border-accent-main/30 transition-all duration-500 group flex flex-col md:flex-row"
+                className="bg-bg-card border border-border-subtle rounded-xl flex flex-row hover:border-accent-main/40 hover:shadow-[0_4px_20px_rgba(168,85,247,0.05)] transition-all duration-300 relative group p-4 sm:p-5 gap-4 items-start"
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: i * 0.15 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
                 viewport={{ once: true }}
               >
-                {/* Imagen (Lado Izquierdo en Desktop) */}
-                <div className="w-full md:w-2/5 h-64 md:h-auto relative overflow-hidden shrink-0 border-b md:border-b-0 md:border-r border-border-subtle">
+                {/* Thumbnail */}
+                <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-lg overflow-hidden border border-border-subtle/50 relative">
                   <img 
                     src={item.image} 
                     alt={item.shortTitle}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" 
+                    className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-bg-card via-transparent to-transparent opacity-80 md:hidden" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-bg-card opacity-90 hidden md:block" />
-                  
-                  {/* Badge de Categoría encima de la imagen */}
-                  <div className="absolute top-6 left-6">
-                    <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 ${item.bgColor} ${item.color} border ${item.borderColor} text-xs font-bold uppercase tracking-wider rounded-full backdrop-blur-md shadow-lg`}>
-                      <FlaskConical size={14} />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+                </div>
+
+                {/* Content */}
+                <div className="flex flex-col flex-1 min-w-0">
+                  {/* Header */}
+                  <div className="flex justify-between items-start gap-2 w-full">
+                    <div className="flex flex-col min-w-0">
+                      <h3 className="text-txt-main font-bold text-lg leading-tight truncate">{item.shortTitle}</h3>
+                      <h4 className="text-txt-muted text-xs font-medium mt-0.5 truncate">{item.institution}</h4>
+                    </div>
+                    
+                    {/* Badge */}
+                    <span className={`shrink-0 inline-flex items-center gap-1 px-2 py-0.5 ${item.bgColor} ${item.color} text-[10px] font-bold rounded-md border ${item.borderColor}`}>
+                      <FlaskConical className="w-3 h-3" />
                       {item.type}
                     </span>
                   </div>
-                </div>
 
-                {/* Contenido (Lado Derecho en Desktop) */}
-                <div className="p-8 md:p-10 flex flex-col justify-center flex-1">
-                  <div className="mb-2">
-                    <h3 className="text-txt-main font-bold text-2xl md:text-3xl leading-snug mb-2 group-hover:text-accent-main transition-colors">
-                      {item.shortTitle}
-                    </h3>
-                    
-                    {/* Tooltip / Subtítulo con el nombre real */}
-                    <p className="text-txt-dim text-xs flex items-start gap-1.5 max-w-xl">
-                      <Info size={14} className="shrink-0 mt-0.5" />
-                      <span><span className="font-semibold text-txt-muted">Paper:</span> {item.fullTitle}</span>
-                    </p>
-                  </div>
-
-                  <p className="text-txt-muted text-base leading-relaxed mb-6 mt-4 max-w-2xl">
-                    {item.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mb-8">
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1.5 mt-2.5">
                     {item.tools.map((t) => (
-                      <span
-                        key={t}
-                        className="px-3 py-1 bg-bg-main text-txt-muted text-[11px] font-semibold tracking-wide uppercase rounded-lg border border-border-subtle"
-                      >
+                      <span key={t} className="px-2 py-0.5 bg-bg-main text-txt-dim text-[10px] font-medium rounded-md border border-border-subtle/50">
                         {t}
                       </span>
                     ))}
                   </div>
 
-                  <div className="mt-auto flex items-center gap-4">
-                    <button
-                      type="button"
-                      onClick={() => handleOpen(item)}
-                      className={`inline-flex items-center justify-center gap-2 ${item.buttonColor} text-white px-6 py-3 rounded-xl text-sm font-bold transition-all duration-300 cursor-pointer shadow-lg`}
-                    >
-                      <FileText size={18} /> Leer Documento
-                    </button>
-                    {item.institution && (
-                      <p className="text-txt-dim text-xs uppercase tracking-wider hidden sm:block font-medium">
-                        {item.institution}
+                  {/* Expandable Description */}
+                  <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-out">
+                    <div className="overflow-hidden">
+                      <p className="text-txt-muted text-xs leading-relaxed mt-3 pb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                        <span className="font-semibold text-txt-main mb-1 block">Paper: {item.fullTitle}</span>
+                        {item.description}
                       </p>
-                    )}
+                    </div>
+                  </div>
+
+                  {/* Actions */}
+                  <div className="flex gap-2.5 mt-3 pt-3 border-t border-border-subtle/30 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                    <button
+                      onClick={() => handleOpen(item)}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-accent-main text-bg-main text-xs font-bold rounded-md hover:bg-accent-bright transition-colors cursor-pointer"
+                    >
+                      <FileText className="w-3.5 h-3.5" />
+                      Leer Documento
+                    </button>
                   </div>
                 </div>
               </motion.div>
