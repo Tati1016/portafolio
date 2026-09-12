@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Home, User, GraduationCap, Code2, FlaskConical, Mail, Menu, X } from 'lucide-react';
+import { Home, User, Layers, Code2, FlaskConical, Mail, Menu, X } from 'lucide-react';
 
 const navLinks = [
   { label: 'Inicio',        href: '#inicio',       icon: Home },
   { label: 'Perfil',        href: '#sobre-mi',     icon: User },
-  { label: 'Formación',     href: '#formacion',    icon: GraduationCap },
-  { label: 'Proyectos',     href: '#desarrollo',   icon: Code2 },
+  { label: 'Habilidades',   href: '#habilidades',  icon: Layers },
+  { label: 'Proyectos',     href: '#proyectos',    icon: Code2 },
   { label: 'Investigación', href: '#investigacion',icon: FlaskConical },
   { label: 'Contacto',      href: '#contacto',     icon: Mail },
 ];

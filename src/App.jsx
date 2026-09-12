@@ -1,4 +1,5 @@
 import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Skills from './components/sections/Skills';
@@ -19,11 +20,9 @@ export default function App() {
           <Hero />
         </div>
 
-        {/* Perfil */}
-        <div id="sobre-mi">
-          <About />
-          <Skills />
-        </div>
+        {/* Perfil y habilidades */}
+        <About />
+        <Skills />
 
         {/* Formación */}
         <div id="formacion">
@@ -31,21 +30,17 @@ export default function App() {
           <Certificates />
         </div>
 
-        {/* Desarrollo */}
-        <div id="desarrollo">
-          <Projects />
-        </div>
+        {/* Proyectos */}
+        <Projects />
 
         {/* Investigación */}
-        <div id="investigacion">
-          <ResearchSection />
-        </div>
+        <ResearchSection />
 
         {/* Contacto */}
-        <div id="contacto">
-          <Contact />
-        </div>
+        <Contact />
       </main>
+
+      <Footer />
     </div>
   );
 }

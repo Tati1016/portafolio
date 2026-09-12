@@ -65,7 +65,7 @@ export default function About() {
           viewport={{ once: true }}
         >
           <a
-            href="/cv/CV.pdf"
+            href="/cv/CV_Jasbleydy_Camacho.pdf"
             download
             className="flex items-center justify-center gap-2 w-full sm:w-auto px-10 py-4 bg-accent-main text-bg-main font-bold rounded-full hover:bg-accent-bright transition-all duration-300 shadow-lg shadow-accent-main/25 text-base"
           >

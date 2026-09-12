@@ -1,35 +1,38 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, LineChart, Briefcase, Database, LayoutTemplate, Server, Terminal } from 'lucide-react';
-
-const coreSkills = [
-  { name: 'R', level: 'Intermedio', color: 'text-blue-400', bgColor: 'bg-blue-400/10', border: 'border-blue-400/20' },
-  { name: 'Python', level: 'Intermedio', color: 'text-yellow-400', bgColor: 'bg-yellow-400/10', border: 'border-yellow-400/20' },
-  { name: 'SQL', level: 'Intermedio', color: 'text-emerald-400', bgColor: 'bg-emerald-400/10', border: 'border-emerald-400/20' },
-  { name: 'React', level: 'Intermedio', color: 'text-cyan-400', bgColor: 'bg-cyan-400/10', border: 'border-cyan-400/20' },
-  { name: 'Java', level: 'Intermedio', color: 'text-red-400', bgColor: 'bg-red-400/10', border: 'border-red-400/20' },
-];
+import { Code2, Database, LineChart, Terminal } from 'lucide-react';
 
 const categories = [
   {
-    title: 'Estadística & Finanzas',
+    title: 'Desarrollo de software',
+    icon: <Code2 className="w-5 h-5" />,
+    skills: [
+      'HTML5 & CSS3',
+      'JavaScript (ES6+)',
+      'React',
+      'Tailwind CSS',
+      'Bootstrap',
+      'Framer Motion',
+      'Java',
+      'Spring Boot',
+      'APIs REST',
+      'Arquitectura MVC',
+    ],
+  },
+  {
+    title: 'Bases de datos',
+    icon: <Database className="w-5 h-5" />,
+    skills: ['SQL', 'PostgreSQL', 'Firebase'],
+  },
+  {
+    title: 'Datos y estadística',
     icon: <LineChart className="w-5 h-5" />,
-    skills: ['Procesos Estocásticos', 'No Paramétricos', 'Optimización', 'Portafolios', 'Riesgo', 'Series de Tiempo'],
+    skills: ['Python', 'R', 'Pandas & NumPy'],
   },
   {
-    title: 'Desarrollo Backend',
-    icon: <Server className="w-5 h-5" />,
-    skills: ['Java Spring Boot', 'APIs REST', 'Bases de Datos Relacionales', 'Arquitectura MVC'],
-  },
-  {
-    title: 'Desarrollo Frontend',
-    icon: <LayoutTemplate className="w-5 h-5" />,
-    skills: ['HTML5 & CSS3', 'JavaScript (ES6+)', 'React.js', 'Tailwind CSS', 'Framer Motion'],
-  },
-  {
-    title: 'Herramientas & Datos',
+    title: 'Herramientas',
     icon: <Terminal className="w-5 h-5" />,
-    skills: ['Git & GitHub', 'Pandas & NumPy', 'Yahoo Finance', 'EasyFit', 'Firebase'],
+    skills: ['Git & GitHub', 'EasyFit', 'Yahoo Finance'],
   },
 ];
 
@@ -40,39 +43,15 @@ export default function Skills() {
         
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-txt-main mb-6">
-            Tecnologías y Habilidades
+            Tecnologías y herramientas
           </h2>
           <p className="text-txt-muted text-lg max-w-2xl mx-auto">
-            Herramientas que domino para transformar datos complejos en soluciones web y modelos predictivos escalables.
+            Tecnologías que he utilizado en proyectos de software y trabajos de análisis de datos.
           </p>
         </div>
 
-        {/* Core Skills - Highlighted */}
-        <div className="mb-16">
-          <h3 className="text-xl font-bold text-txt-main mb-8 text-center flex items-center justify-center gap-3">
-            <span className="w-12 h-[1px] bg-border-subtle/80"></span>
-            Tecnologías Core
-            <span className="w-12 h-[1px] bg-border-subtle/80"></span>
-          </h3>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-            {coreSkills.map((skill, i) => (
-              <motion.div
-                key={skill.name}
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className={`flex flex-col items-center justify-center p-6 rounded-2xl border ${skill.border} ${skill.bgColor} hover:scale-105 transition-transform duration-300 min-w-[140px] shadow-lg`}
-              >
-                <span translate="no" className={`text-2xl font-black ${skill.color} mb-2 tracking-tight`}>{skill.name}</span>
-                <span className="text-txt-dim text-xs font-semibold uppercase tracking-wider">{skill.level}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
         {/* Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
           {categories.map((cat, i) => (
             <motion.div
               key={cat.title}

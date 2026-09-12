@@ -1,41 +1,41 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Code, ExternalLink, Briefcase, Rocket } from 'lucide-react';
+import { Code, ExternalLink } from 'lucide-react';
 
 const projects = [
   {
-    title: 'Finance App',
-    subtitle: 'Plataforma de Análisis Financiero Personal',
-    description: 'Plataforma web para gestión financiera personal. Incluye análisis de tendencias, control de presupuestos y gráficas interactivas en tiempo real.',
-    techs: ['React', 'Firebase', 'HTML', 'CSS', 'JavaScript', 'Chart.js'],
-    type: 'Finanzas · Full Stack',
+    title: 'VidaFit Ecommerce',
+    subtitle: 'Proyecto colaborativo · Generation Colombia',
+    description: 'Plataforma de comercio electrónico para la gestión y compra de suplementos deportivos. En el proyecto trabajé en funcionalidades del catálogo y carrito y, durante la integración del backend, participé en la construcción de los DTOs utilizados para comunicar las distintas capas de la aplicación.',
+    techs: ['Java', 'Spring Boot', 'PostgreSQL', 'JavaScript', 'Bootstrap'],
+    type: 'Ecommerce',
     highlight: {
-      text: 'Versión 3.0',
-      icon: <Rocket className="w-4 h-4" />,
+      text: '2026 · Full Stack',
+      icon: <Code className="w-4 h-4" />,
     },
-    demoUrl: 'https://personal-finance-analyti-4cf20.web.app/',
-    githubUrl: 'https://github.com/Tati1016/app-finanzas',
-    image: '/projects/finance_app.png',
+    demoUrl: 'https://francosg2003.github.io/GenerartionsCo13_VidaFit/',
+    githubUrl: 'https://github.com/FrancoSG2003/GenerartionsCo13_VidaFit',
+    image: '/projects/vidafit-cover.svg',
   },
   {
-    title: 'SERVICTORNO L.C',
-    subtitle: 'Sitio Web Corporativo Industrial',
-    description: 'Sitio corporativo para empresa de mecanizado en Yopal. Incluye portafolio de proyectos, catálogo de servicios e integración con WhatsApp para cotizaciones.',
-    techs: ['HTML', 'CSS', 'JavaScript', 'GitHub Pages'],
-    type: 'Sitio Corporativo',
+    title: 'Planificador de Tareas Web',
+    subtitle: 'Proyecto individual · Generation Colombia',
+    description: 'Aplicación web para organizar tareas y practicar la gestión de datos e interacción con el DOM mediante JavaScript. Implementé la creación, actualización y eliminación de tareas, las validaciones del formulario y la persistencia con localStorage mediante una clase TaskManager.',
+    techs: ['HTML5', 'CSS3', 'Bootstrap 5', 'JavaScript', 'localStorage'],
+    type: 'Aplicación Web',
     highlight: {
-      text: 'Cliente Real',
-      icon: <Briefcase className="w-4 h-4" />,
+      text: '2026 · En desarrollo',
+      icon: <Code className="w-4 h-4" />,
     },
-    demoUrl: 'https://tati1016.github.io/servictorno-web/',
-    githubUrl: 'https://github.com/Tati1016/servictorno-web',
-    image: '/projects/servictorno.png',
+    demoUrl: 'https://tati1016.github.io/PLANIFICADOR-DE-TAREAS-WEB/',
+    githubUrl: 'https://github.com/Tati1016/PLANIFICADOR-DE-TAREAS-WEB',
+    image: '/projects/planificador-cover.svg',
   },
 ];
 
 export default function Projects() {
   return (
-    <section id="desarrollo" className="py-24 px-8 md:px-20 bg-bg-main border-y border-border-subtle/20">
+    <section id="proyectos" className="py-24 px-8 md:px-20 bg-bg-main border-y border-border-subtle/20">
       <div className="max-w-6xl mx-auto">
         
         <div className="text-center mb-16">
@@ -51,20 +51,29 @@ export default function Projects() {
           {projects.map((p, i) => (
             <motion.div
               key={p.title}
-              className="bg-bg-card border border-border-subtle rounded-xl flex flex-row hover:border-accent-main/40 hover:shadow-[0_4px_20px_rgba(168,85,247,0.05)] transition-all duration-300 relative group p-4 sm:p-5 gap-4 items-start"
+              className="bg-bg-card border border-border-subtle rounded-xl flex flex-col sm:flex-row hover:border-accent-main/40 hover:shadow-[0_4px_20px_rgba(168,85,247,0.05)] transition-all duration-300 relative group p-4 sm:p-5 gap-4 sm:items-start"
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               viewport={{ once: true }}
             >
-              {/* Thumbnail */}
-              <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-lg overflow-hidden border border-border-subtle/50 relative">
-                <img 
-                  src={p.image} 
-                  alt={p.title}
-                  className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" 
-                />
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+              {/* Portada */}
+              <div className="w-full sm:w-[150px] lg:w-[170px] aspect-video shrink-0 rounded-lg overflow-hidden border border-border-subtle/50 relative bg-bg-main">
+                {p.image ? (
+                  <>
+                    <img
+                      src={p.image}
+                      alt={p.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+                  </>
+                ) : (
+                  <div className="w-full h-full bg-accent-main/10 flex items-center justify-center text-accent-main">
+                    <Code className="w-7 h-7" />
+                  </div>
+                )}
               </div>
 
               {/* Content */}

@@ -4,6 +4,11 @@ import { GraduationCap } from 'lucide-react';
 
 const education = [
   {
+    degree: 'Bootcamp Full Stack Java Developer',
+    institution: 'Generation Colombia',
+    period: 'Jun. 2026 - Oct. 2026',
+  },
+  {
     degree: 'Pregrado en Estadística',
     institution: 'Universidad Nacional de Colombia',
     period: '2022 - Actualidad',
