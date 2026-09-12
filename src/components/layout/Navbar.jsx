@@ -43,7 +43,7 @@ export default function Navbar() {
           : 'bg-transparent border-b border-transparent'
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-6 md:px-16 py-4 flex items-center justify-between">
+      <nav className="relative max-w-6xl mx-auto px-6 md:px-16 py-4 flex items-center justify-between">
 
         {/* Logo */}
         <a
@@ -61,7 +61,7 @@ export default function Navbar() {
         </a>
 
         {/* Pill central de navegación — desktop */}
-        <div className="hidden md:flex items-center bg-bg-card/80 border border-border-subtle/50 rounded-full px-2 py-1.5 gap-1 backdrop-blur-sm shadow-md shadow-black/10">
+        <div className="hidden md:flex md:absolute md:left-1/2 md:-translate-x-1/2 items-center bg-bg-card/80 border border-border-subtle/50 rounded-full px-2 py-1.5 gap-1 backdrop-blur-sm shadow-md shadow-black/10">
           {navLinks.map(({ label, href, icon: Icon }) => {
             const isActive = active === href;
             return (
@@ -85,15 +85,6 @@ export default function Navbar() {
             );
           })}
         </div>
-
-        {/* CTA Derecha — Contacto rápido */}
-        <a
-          href="#contacto"
-          className="hidden md:flex items-center gap-2 px-4 py-2 text-xs font-bold text-accent-main border border-accent-main/30 rounded-full hover:bg-accent-main hover:text-bg-main transition-all duration-300"
-        >
-          <Mail className="w-3.5 h-3.5" />
-          Hablemos
-        </a>
 
         {/* Botón hamburguesa — mobile */}
         <button

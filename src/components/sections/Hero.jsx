@@ -40,7 +40,7 @@ export default function Hero() {
               Desarrolladora de Software Junior con enfoque en Datos
             </span>
             <span className="block text-base md:text-lg mt-2 md:mt-3">
-              Estadística · Desarrollo Full Stack · Análisis de Datos
+              Estadística aplicada al desarrollo de software y al análisis de datos.
             </span>
           </motion.p>
 

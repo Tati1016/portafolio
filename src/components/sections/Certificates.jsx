@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Award, ExternalLink, Eye, X, FileText } from 'lucide-react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { ExternalLink, ArrowUpRight, X, FileText } from 'lucide-react';
 
 const certificates = [
   {
@@ -79,63 +73,47 @@ export default function Certificates() {
 
   return (
     <>
-      <section id="certificaciones" className="py-24 px-8 md:px-20 bg-bg-main border-y border-border-subtle/20">
+      <section id="certificaciones" className="py-20 md:py-24 px-8 md:px-20 bg-bg-main border-y border-border-subtle/20">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 px-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-txt-main mb-6">
-              Certificaciones
+
+          <div className="max-w-2xl mb-10 md:mb-12">
+            <span className="block w-10 h-[3px] bg-brand-pink mb-6" />
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-txt-warm">
+              Formación complementaria
             </h2>
-            <p className="text-txt-muted text-lg max-w-2xl mx-auto">
-              Validación continua de aptitudes técnicas y desarrollo profesional.
+            <p className="mt-4 text-base leading-relaxed text-txt-soft">
+              Cursos y certificaciones que complementan mi formación en software y datos.
             </p>
           </div>
 
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={24}
-            slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 5000, disableOnInteraction: false }}
-            loop
-            breakpoints={{
-              640: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            }}
-            className="certificates-swiper pb-14"
-          >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 border-t border-border-subtle/40">
             {certificates.map((cert, i) => (
-              <SwiperSlide key={i} className="!h-auto">
-                <motion.div
-                  className="bg-bg-card border border-border-subtle rounded-2xl overflow-hidden flex flex-col h-full hover:border-accent-main/40 transition-colors duration-500"
-                  whileHover={{ boxShadow: '0 0 30px rgba(168, 85, 247, 0.05)' }}
+              <motion.div
+                key={cert.file}
+                className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 py-5 border-b border-border-subtle/40"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.4, delay: (i % 2) * 0.06 }}
+                viewport={{ once: true }}
+              >
+                <div className="min-w-0">
+                  <h3 className="text-base font-semibold leading-snug text-txt-warm">
+                    {cert.title}
+                  </h3>
+                  <p className="mt-1 text-sm text-txt-soft">{cert.issuer}</p>
+                </div>
+
+                <button
+                  onClick={() => handleOpen(cert)}
+                  className="shrink-0 inline-flex items-center gap-1 self-start text-sm font-medium text-brand-purple hover:text-brand-pink transition-colors duration-300 cursor-pointer"
                 >
-                  {/* accent bar */}
-                  <div className="h-[3px] bg-gradient-to-r from-accent-main to-accent-soft" />
-
-                  <div className="p-8 flex flex-col flex-1">
-                    <div className="w-12 h-12 rounded-xl bg-accent-main/10 text-accent-main flex items-center justify-center mb-6">
-                      <Award size={24} />
-                    </div>
-
-                    <h3 className="text-txt-main font-bold text-lg leading-snug mb-2">
-                      {cert.title}
-                    </h3>
-                    <p className="text-txt-muted text-sm mb-8">{cert.issuer}</p>
-
-                    <div className="mt-auto pt-4 border-t border-border-subtle/30">
-                      <button
-                        onClick={() => handleOpen(cert)}
-                        className="w-full flex items-center justify-center gap-2 bg-accent-main text-bg-main rounded-xl py-3 text-sm font-bold hover:bg-accent-bright transition-all duration-300 cursor-pointer shadow-md shadow-accent-main/20"
-                      >
-                        <Eye size={16} /> Ver Credencial
-                      </button>
-                    </div>
-                  </div>
-                </motion.div>
-              </SwiperSlide>
+                  Ver credencial
+                  <ArrowUpRight className="w-4 h-4" />
+                </button>
+              </motion.div>
             ))}
-          </Swiper>
+          </div>
+
         </div>
       </section>
 
@@ -234,29 +212,6 @@ export default function Certificates() {
           </motion.div>
         )}
       </AnimatePresence>
-
-      <style>{`
-        .certificates-swiper .swiper-button-prev,
-        .certificates-swiper .swiper-button-next {
-          color: var(--accent); transition: all 0.3s;
-        }
-        .certificates-swiper .swiper-button-prev:hover,
-        .certificates-swiper .swiper-button-next:hover {
-          color: #fff; transform: scale(1.15);
-        }
-        .certificates-swiper .swiper-button-prev::after,
-        .certificates-swiper .swiper-button-next::after {
-          font-size: 20px; font-weight: 800;
-        }
-        .certificates-swiper .swiper-pagination-bullet {
-          background: rgba(168, 85, 247, 0.3); opacity: 1; transition: all 0.3s;
-          width: 10px; height: 10px;
-        }
-        .certificates-swiper .swiper-pagination-bullet-active {
-          background: var(--accent); width: 28px; border-radius: 6px;
-        }
-        .certificates-swiper .swiper-slide { height: auto; }
-      `}</style>
     </>
   );
 }

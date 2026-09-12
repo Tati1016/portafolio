@@ -1,75 +1,45 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Download, BarChart, Laptop, GraduationCap } from 'lucide-react';
+import { Download } from 'lucide-react';
 
 export default function About() {
   return (
-    <section id="sobre-mi" className="py-24 px-8 md:px-20 bg-bg-main">
-      <div className="max-w-4xl mx-auto">
-        
-        {/* Encabezado */}
-        <h2 className="text-4xl md:text-5xl font-bold text-txt-main text-center mb-14">
-          ¿Quién soy?
-        </h2>
+    <section id="sobre-mi" className="py-24 md:py-32 px-8 md:px-20 bg-bg-main text-txt-warm">
+      <div className="max-w-5xl mx-auto">
 
-        {/* Texto Conservado por la Usuaria */}
+        {/* Encabezado editorial */}
         <motion.div
-          className="text-txt-main text-lg md:text-xl max-w-4xl mx-auto text-center mb-16 px-4"
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <p className="leading-relaxed mb-6">
-            Estudio <span className="text-accent-main font-semibold">Estadística</span> en la Universidad Nacional de Colombia y también me he formado en <span className="text-accent-main font-semibold">Análisis y Desarrollo de Software</span> en el SENA.
-          </p>
-          <p className="leading-relaxed mb-12 text-txt-muted">
-            Esa combinación me ha llevado a trabajar tanto con análisis de datos como con aplicaciones web. Antes de programar una solución, la entiendo con datos.
-          </p>
-
-          {/* Bloques destacados (Stat cards) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            <div className="bg-bg-card border border-border-subtle rounded-2xl p-6 flex flex-col items-center justify-center text-center hover:border-accent-main/30 transition-all duration-300">
-              <div className="w-12 h-12 rounded-full bg-accent-main/10 flex items-center justify-center text-accent-main mb-4">
-                <BarChart className="w-6 h-6" />
-              </div>
-              <div className="text-txt-main font-medium text-sm md:text-base leading-snug">
-                3 trabajos de investigación académica
-              </div>
-            </div>
-            <div className="bg-bg-card border border-border-subtle rounded-2xl p-6 flex flex-col items-center justify-center text-center hover:border-accent-main/30 transition-all duration-300">
-              <div className="w-12 h-12 rounded-full bg-accent-main/10 flex items-center justify-center text-accent-main mb-4">
-                <Laptop className="w-6 h-6" />
-              </div>
-              <div className="text-txt-main font-medium text-sm md:text-base leading-snug">
-                2 Proyectos web en producción
-              </div>
-            </div>
-            <div className="bg-bg-card border border-border-subtle rounded-2xl p-6 flex flex-col items-center justify-center text-center hover:border-accent-main/30 transition-all duration-300">
-              <div className="w-12 h-12 rounded-full bg-accent-main/10 flex items-center justify-center text-accent-main mb-4">
-                <GraduationCap className="w-6 h-6" />
-              </div>
-              <div className="text-txt-main font-medium text-sm md:text-base leading-snug">
-                Universidad Nacional de Colombia
-              </div>
-            </div>
-          </div>
+          <span className="block w-10 h-[3px] bg-brand-pink mb-6" />
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight max-w-2xl">
+            Entre estadística y software
+          </h2>
         </motion.div>
 
-        {/* Botones de Acción */}
         <motion.div
-          className="flex flex-col sm:flex-row items-center justify-center gap-6"
+          className="mt-14 max-w-2xl"
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
           viewport={{ once: true }}
         >
+          <p className="text-xl md:text-2xl leading-relaxed font-light">
+            Estudio <span className="font-semibold">Estadística</span> en la Universidad Nacional de Colombia y también me he formado en <span className="font-semibold">desarrollo de software</span> en el SENA y Generation Colombia.
+          </p>
+          <p className="mt-6 text-base md:text-lg leading-relaxed text-txt-soft">
+            Esa combinación la he puesto en práctica en proyectos de análisis de datos y desarrollo web. Antes de programar una solución, la entiendo con datos.
+          </p>
+
           <a
             href="/cv/CV_Jasbleydy_Camacho.pdf"
             download
-            className="flex items-center justify-center gap-2 w-full sm:w-auto px-10 py-4 bg-accent-main text-bg-main font-bold rounded-full hover:bg-accent-bright transition-all duration-300 shadow-lg shadow-accent-main/25 text-base"
+            className="inline-flex items-center gap-2 mt-10 px-6 py-3 bg-brand-purple text-white text-sm font-semibold rounded-lg hover:bg-accent-bright transition-colors duration-300"
           >
-            <Download className="w-5 h-5 flex-shrink-0" />
+            <Download className="w-4 h-4 flex-shrink-0" />
             Descargar CV
           </a>
         </motion.div>

@@ -10,7 +10,7 @@ export default function Footer() {
           <span className="text-txt-main font-bold text-lg leading-tight">
             Jasbleydy Camacho
           </span>
-          <span className="text-txt-muted text-sm">
+          <span className="text-txt-soft text-sm">
             Estadística · Desarrollo de Software · Datos
           </span>
         </div>
@@ -21,7 +21,7 @@ export default function Footer() {
             href="https://github.com/Tati1016"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-txt-muted border border-border-subtle rounded-lg hover:text-txt-main hover:border-accent-main/40 transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-txt-soft border border-border-subtle rounded-lg hover:text-txt-warm hover:border-brand-purple/50 transition-colors"
           >
             <Github className="w-4 h-4" />
             GitHub
@@ -30,7 +30,7 @@ export default function Footer() {
             href="https://linkedin.com/in/jasbleydy-camacho-233526278"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-txt-muted border border-border-subtle rounded-lg hover:text-txt-main hover:border-accent-main/40 transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-txt-soft border border-border-subtle rounded-lg hover:text-txt-warm hover:border-brand-purple/50 transition-colors"
           >
             <Linkedin className="w-4 h-4" />
             LinkedIn
@@ -39,12 +39,9 @@ export default function Footer() {
       </div>
 
       {/* Créditos */}
-      <div className="max-w-6xl mx-auto mt-10 pt-6 border-t border-border-subtle/20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-        <p className="text-txt-dim text-xs">
+      <div className="max-w-6xl mx-auto mt-10 pt-6 border-t border-border-subtle/20">
+        <p className="text-txt-soft text-xs">
           © 2026 Jasbleydy Camacho
-        </p>
-        <p className="text-txt-dim text-xs">
-          Desarrollado con React y Vite
         </p>
       </div>
     </footer>

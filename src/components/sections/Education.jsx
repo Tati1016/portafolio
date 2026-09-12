@@ -32,7 +32,7 @@ export default function Education() {
         
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-txt-main">
-            Educación
+            Formación
           </h2>
         </div>
 
