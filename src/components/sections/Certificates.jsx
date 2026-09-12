@@ -41,7 +41,7 @@ const certificates = [
   },
 ];
 
-const pdfUrl = (filename) => `/${filename}`;
+const pdfUrl = (filename) => `/certificates/${filename}`;
 
 const overlayVariants = {
   hidden: { opacity: 0 },

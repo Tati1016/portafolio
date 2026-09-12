@@ -40,10 +40,10 @@ export default function Projects() {
         
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-txt-main mb-4">
-            Proyectos Destacados
+            Proyectos de Software
           </h2>
           <p className="text-txt-muted text-base max-w-2xl mx-auto">
-            Explora mis desarrollos más recientes. Pasa el cursor sobre cada proyecto para ver más detalles.
+            Proyectos en los que he puesto en práctica lógica, desarrollo web y trabajo con herramientas de software.
           </p>
         </div>
 

@@ -26,6 +26,6 @@ dist-ssr
 # Temporary tool files
 build_output.txt
 filelist.txt
-build_err.log
+build_err.*
 photo_to_crop.jpg
 remove_bg.py

@@ -5,7 +5,7 @@ const navLinks = [
   { label: 'Inicio',        href: '#inicio',       icon: Home },
   { label: 'Perfil',        href: '#sobre-mi',     icon: User },
   { label: 'Formación',     href: '#formacion',    icon: GraduationCap },
-  { label: 'Desarrollo',    href: '#desarrollo',   icon: Code2 },
+  { label: 'Proyectos',     href: '#desarrollo',   icon: Code2 },
   { label: 'Investigación', href: '#investigacion',icon: FlaskConical },
   { label: 'Contacto',      href: '#contacto',     icon: Mail },
 ];

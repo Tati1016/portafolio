@@ -36,7 +36,12 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Estadística · Desarrolladora Backend · Analista de Datos
+            <span className="block text-txt-main">
+              Desarrolladora de Software Junior con enfoque en Datos
+            </span>
+            <span className="block text-base md:text-lg mt-3">
+              Estadística · Desarrollo Full Stack · Análisis de Datos
+            </span>
           </motion.p>
 
           <motion.div
@@ -53,7 +58,7 @@ export default function Hero() {
               Ver proyectos
             </a>
             <a
-              href="/CV.pdf"
+              href="/cv/CV.pdf"
               download
               className="px-8 py-3 bg-accent-main border-2 border-accent-main text-bg-main font-bold rounded-full hover:bg-accent-bright hover:border-accent-bright transition-all duration-300 shadow-[0_0_15px_rgba(168,85,247,0.3)] hover:shadow-[0_0_25px_rgba(168,85,247,0.5)] text-center"
             >
@@ -73,7 +78,7 @@ export default function Hero() {
           <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] rounded-[2rem] border border-accent-main/20 shadow-[0_0_50px_0_rgba(168,85,247,0.1)] p-1.5 bg-accent-main/5 backdrop-blur-sm overflow-hidden group hover:shadow-[0_0_80px_0_rgba(168,85,247,0.2)] transition-all duration-500">
             <div className="w-full h-full rounded-[1.8rem] bg-bg-main flex items-center justify-center relative overflow-hidden border border-border-subtle">
               <img 
-                src="/perfil.png" 
+                src="/images/perfil.png"
                 alt="Jasbleydy Tatiana Camacho Higuera" 
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />

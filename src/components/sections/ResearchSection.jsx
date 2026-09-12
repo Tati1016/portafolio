@@ -14,7 +14,7 @@ const researches = [
     description: 'Modelo de Cadena de Markov en tiempo discreto sobre datos reales de 7.403 clientes de telecomunicaciones. Simulación de cohorte a 12 meses con estimación empírica de matriz de transición.',
     tools: ['Cadenas de Markov', 'R', 'Simulación'],
     institution: 'Universidad Nacional de Colombia',
-    link: '/papers/markov.pdf',
+    link: '/research/markov.pdf',
     image: '/projects/markov_research.png',
   },
   {
@@ -28,7 +28,7 @@ const researches = [
     description: 'Análisis comparativo de BTC, ETH, AAPL y otros (2022–2025) usando pruebas KS y Anderson-Darling con bootstrap paramétrico.',
     tools: ['KS', 'Anderson-Darling', 'Bootstrap', 'R'],
     institution: 'Universidad Nacional de Colombia',
-    link: '/papers/no-parametrica.pdf',
+    link: '/research/no-parametrica.pdf',
     image: '/projects/crypto_research.png',
   },
   {
@@ -42,7 +42,7 @@ const researches = [
     description: 'Construcción de portafolio óptimo usando teoría de Markowitz. Ajuste de distribuciones Dagum y Log-Logística. Volatilidad anualizada: 17.37%.',
     tools: ['Markowitz', 'EasyFit', 'R', 'Optimización'],
     institution: 'Universidad Nacional de Colombia',
-    link: '/papers/inversion.pdf',
+    link: '/research/inversion.pdf',
     image: '/projects/portfolio_research.png',
   },
 ];
@@ -90,7 +90,7 @@ export default function ResearchSection() {
               Estadística Aplicada
             </h2>
             <p className="text-txt-muted text-lg leading-relaxed max-w-3xl mx-auto">
-              Desarrollo de modelos estadísticos y probabilísticos para resolver problemas complejos y respaldar la toma de decisiones.
+              Trabajos académicos en los que he aplicado métodos estadísticos a problemas de clientes, mercados financieros y optimización de portafolios.
             </p>
           </div>
 

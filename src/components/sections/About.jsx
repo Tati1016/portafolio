@@ -21,13 +21,10 @@ export default function About() {
           viewport={{ once: true }}
         >
           <p className="leading-relaxed mb-6">
-            Soy estudiante de <span className="text-accent-main font-semibold">Estadística</span> en la Universidad Nacional de Colombia y de <span className="text-accent-main font-semibold">Tecnología en Análisis y Desarrollo de Software</span> en el SENA. Me apasiona descubrir las historias que se esconden detrás de los datos.
+            Estudio <span className="text-accent-main font-semibold">Estadística</span> en la Universidad Nacional de Colombia y también me he formado en <span className="text-accent-main font-semibold">Análisis y Desarrollo de Software</span> en el SENA.
           </p>
-          <p className="leading-relaxed mb-6 text-txt-muted">
-            Combino precisión analítica con desarrollo backend. Diseño arquitecturas de bases de datos y APIs en Java para procesar grandes volúmenes de información. Antes de programar una solución, la entiendo con datos.
-          </p>
-          <p className="leading-relaxed mb-12 text-accent-main font-semibold text-xl md:text-2xl italic">
-            "Mi objetivo es crear sistemas que no solo almacenen información, sino que la transformen en conocimiento útil para tomar decisiones."
+          <p className="leading-relaxed mb-12 text-txt-muted">
+            Esa combinación me ha llevado a trabajar tanto con análisis de datos como con aplicaciones web. Antes de programar una solución, la entiendo con datos.
           </p>
 
           {/* Bloques destacados (Stat cards) */}
@@ -37,7 +34,7 @@ export default function About() {
                 <BarChart className="w-6 h-6" />
               </div>
               <div className="text-txt-main font-medium text-sm md:text-base leading-snug">
-                3 Papers académicos publicados
+                3 trabajos de investigación académica
               </div>
             </div>
             <div className="bg-bg-card border border-border-subtle rounded-2xl p-6 flex flex-col items-center justify-center text-center hover:border-accent-main/30 transition-all duration-300">
@@ -68,7 +65,7 @@ export default function About() {
           viewport={{ once: true }}
         >
           <a
-            href="/CV.pdf"
+            href="/cv/CV.pdf"
             download
             className="flex items-center justify-center gap-2 w-full sm:w-auto px-10 py-4 bg-accent-main text-bg-main font-bold rounded-full hover:bg-accent-bright transition-all duration-300 shadow-lg shadow-accent-main/25 text-base"
           >
