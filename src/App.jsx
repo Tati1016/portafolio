@@ -15,28 +15,22 @@ export default function App() {
       <Navbar />
 
       <main className="relative z-10 w-full flex flex-col">
-        {/* Inicio */}
         <div id="inicio">
           <Hero />
         </div>
 
-        {/* Perfil y habilidades */}
         <About />
         <Skills />
 
-        {/* Formación */}
         <div id="formacion">
           <Education />
           <Certificates />
         </div>
 
-        {/* Proyectos */}
         <Projects />
 
-        {/* Investigación */}
         <ResearchSection />
 
-        {/* Contacto */}
         <Contact />
       </main>
 

@@ -17,7 +17,6 @@ Tecnologías con las que está construido este portafolio:
 - **Vite 8** — entorno de desarrollo y build
 - **Tailwind CSS 4** — estilos
 - **Framer Motion** — animaciones de entrada
-- **Swiper** — carrusel de certificaciones
 - **Lucide React** — iconos
 - **ESLint 9** — análisis estático del código
 

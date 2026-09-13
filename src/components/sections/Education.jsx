@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap } from 'lucide-react';
 
@@ -47,12 +46,10 @@ export default function Education() {
               transition={{ duration: 0.6, delay: i * 0.15 }}
               viewport={{ once: true }}
             >
-              {/* Timeline dot */}
               <div className="absolute -left-3.5 md:-left-4 top-1.5 w-7 h-7 md:w-8 md:h-8 rounded-full bg-bg-main border-2 border-accent-main flex items-center justify-center group-hover:bg-accent-main/20 group-hover:scale-110 transition-all duration-300 z-10">
                 <GraduationCap className="w-3.5 h-3.5 md:w-4 md:h-4 text-accent-main" />
               </div>
 
-              {/* Tarjeta de contenido */}
               <div className="bg-bg-card border border-border-subtle rounded-2xl p-6 md:p-8 hover:border-accent-main/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div>

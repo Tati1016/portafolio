@@ -5,7 +5,6 @@ export default function Footer() {
     <footer className="border-t border-border-subtle/30 bg-bg-main px-8 md:px-20 py-12">
       <div className="max-w-6xl mx-auto flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
 
-        {/* Identidad */}
         <div className="flex flex-col gap-1.5">
           <span className="text-txt-main font-bold text-lg leading-tight">
             Jasbleydy Camacho
@@ -15,7 +14,6 @@ export default function Footer() {
           </span>
         </div>
 
-        {/* Enlaces */}
         <div className="flex items-center gap-3">
           <a
             href="https://github.com/Tati1016"
@@ -38,7 +36,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Créditos */}
       <div className="max-w-6xl mx-auto mt-10 pt-6 border-t border-border-subtle/20">
         <p className="text-txt-soft text-xs">
           © 2026 Jasbleydy Camacho

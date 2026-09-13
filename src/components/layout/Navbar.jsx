@@ -45,7 +45,6 @@ export default function Navbar() {
     >
       <nav className="relative max-w-6xl mx-auto px-6 md:px-16 py-4 flex items-center justify-between">
 
-        {/* Logo */}
         <a
           href="#inicio"
           className="flex items-center gap-2 group"
@@ -60,7 +59,6 @@ export default function Navbar() {
           </span>
         </a>
 
-        {/* Pill central de navegación — desktop */}
         <div className="hidden md:flex md:absolute md:left-1/2 md:-translate-x-1/2 items-center bg-bg-card/80 border border-border-subtle/50 rounded-full px-2 py-1.5 gap-1 backdrop-blur-sm shadow-md shadow-black/10">
           {navLinks.map(({ label, href, icon: Icon }) => {
             const isActive = active === href;
@@ -86,17 +84,16 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Botón hamburguesa — mobile */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden p-2 rounded-xl bg-bg-card border border-border-subtle text-txt-muted hover:text-accent-main hover:border-accent-main/40 transition-all duration-300"
-          aria-label="Abrir menú"
+          aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
+          aria-expanded={open}
         >
           {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </nav>
 
-      {/* Menú mobile */}
       {open && (
         <div className="md:hidden bg-bg-main/98 border-t border-border-subtle/30 backdrop-blur-xl">
           <ul className="flex flex-col py-3">

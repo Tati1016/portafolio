@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
 export default function Hero() {
@@ -13,7 +12,6 @@ export default function Hero() {
 
       <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center z-10">
 
-        {/* Columna Izquierda: Identidad Minimalista */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
 
           <motion.h1
@@ -67,7 +65,6 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Columna Derecha: Foto Profesional (Rounded 2xl) */}
         <motion.div
           className="flex justify-center lg:justify-end order-1 lg:order-2"
           initial={{ scale: 0.95, opacity: 0 }}

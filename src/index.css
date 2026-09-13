@@ -3,7 +3,6 @@
 :root {
   --bg-primary: #0B0F14;
   --bg-secondary: #111827;
-  --bg-accent-card: #151B24;
   --border-muted: #2D3748;
   --text-primary: #F8FAFC;
   --text-secondary: #94A3B8;
@@ -15,12 +14,7 @@
   /* Identidad visual — superficies claras y acentos editoriales */
   --surface: #121827;
   --text-warm: #F7F5F8;
-  --paper: #FAF8FC;
-  --blush: #FFF3F7;
   --lavender: #D8C5F7;
-  --line-light: #E9E3F2;
-  --text-dark: #17141D;
-  --text-muted-light: #667085;
   --text-muted-dark: #A8B4C5;
   --purple: #9B5DE5;
   --pink: #EC5F8C;
@@ -29,7 +23,6 @@
 @theme {
   --color-bg-main: var(--bg-primary);
   --color-bg-card: var(--bg-secondary);
-  --color-bg-card-alt: var(--bg-accent-card);
   --color-border-subtle: var(--border-muted);
   --color-txt-main: var(--text-primary);
   --color-txt-muted: var(--text-secondary);
@@ -39,12 +32,7 @@
   --color-accent-bright: var(--accent-hover);
   --color-surface: var(--surface);
   --color-txt-warm: var(--text-warm);
-  --color-paper: var(--paper);
-  --color-blush: var(--blush);
   --color-lavender: var(--lavender);
-  --color-line-light: var(--line-light);
-  --color-ink: var(--text-dark);
-  --color-ink-muted: var(--text-muted-light);
   --color-txt-soft: var(--text-muted-dark);
   --color-brand-purple: var(--purple);
   --color-brand-pink: var(--pink);
@@ -59,24 +47,4 @@ body {
   @apply bg-bg-main text-txt-main antialiased font-sans;
   margin: 0;
   min-height: 100vh;
-}
-
-/* Animaciones personalizadas */
-@keyframes timelinePulse {
-  0% {
-    opacity: 0.5;
-    box-shadow: 0 0 4px rgba(168, 85, 247, 0.4);
-  }
-  50% {
-    opacity: 1;
-    box-shadow: 0 0 12px rgba(168, 85, 247, 0.9);
-  }
-  100% {
-    opacity: 0.5;
-    box-shadow: 0 0 4px rgba(168, 85, 247, 0.4);
-  }
-}
-
-.animate-timeline-glow {
-  animation: timelinePulse 3s infinite ease-in-out;
 }

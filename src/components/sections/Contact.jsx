@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Send, Github, Linkedin } from 'lucide-react';
+import { Mail, MapPin, Send, Github, Linkedin } from 'lucide-react';
 
 const EMAIL = "jasbleydyhiguera@gmail.com";
 const LOCATION = "Bogotá D.C.";
@@ -44,7 +44,6 @@ export default function Contact() {
     <section id="contacto" className="py-24 md:py-32 px-8 md:px-20 bg-bg-main">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
 
-        {/* Columna izquierda: información */}
         <div>
           <span className="block w-10 h-[3px] bg-brand-pink mb-6" />
           <p className="text-brand-pink text-xs font-semibold uppercase tracking-[0.16em] mb-4">
@@ -67,15 +66,11 @@ export default function Contact() {
             </a>
 
             <div className="inline-flex items-center gap-3 text-txt-soft">
-              <svg className="w-4 h-4 shrink-0 text-brand-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-              </svg>
+              <MapPin className="w-4 h-4 shrink-0 text-brand-pink" />
               <span className="text-base">{LOCATION}</span>
             </div>
           </div>
 
-          {/* Redes */}
           <div className="flex flex-wrap items-center gap-3 mt-8">
             <a
               href="https://github.com/Tati1016"
@@ -98,12 +93,12 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Columna derecha: formulario */}
         <div className="w-full">
           <AnimatePresence mode="wait">
             {status === 'success' ? (
               <motion.div
                 key="success"
+                aria-live="polite"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -133,7 +128,7 @@ export default function Contact() {
               >
                 <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                   {status === 'error' && (
-                    <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-400 rounded-lg text-sm">
+                    <div aria-live="polite" className="p-4 bg-red-500/10 border border-red-500/20 text-red-400 rounded-lg text-sm">
                       Hubo un error al enviar. Por favor intenta de nuevo.
                     </div>
                   )}

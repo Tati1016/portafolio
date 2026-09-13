@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, ArrowUpRight, X, FileText } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import PdfModal from '../PdfModal';
 
 const certificates = [
   {
@@ -37,39 +38,12 @@ const certificates = [
 
 const pdfUrl = (filename) => `/certificates/${filename}`;
 
-const overlayVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
-  exit: { opacity: 0 },
-};
-
-const modalVariants = {
-  hidden: { opacity: 0, scale: 0.92, y: 30 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    transition: { type: 'spring', stiffness: 300, damping: 25 },
-  },
-  exit: { opacity: 0, scale: 0.95, y: 20, transition: { duration: 0.2 } },
-};
-
 export default function Certificates() {
   const [selected, setSelected] = useState(null);
-  const [iframeError, setIframeError] = useState(false);
 
-  const handleOpen = (cert) => {
-    setIframeError(false);
-    setSelected(cert);
-  };
+  const handleOpen = (cert) => setSelected(cert);
 
   const handleClose = () => setSelected(null);
-
-  const handleVerify = () => {
-    if (selected) {
-      window.open(pdfUrl(selected.file), '_blank', 'noopener,noreferrer');
-    }
-  };
 
   return (
     <>
@@ -119,97 +93,15 @@ export default function Certificates() {
 
       <AnimatePresence>
         {selected && (
-          <motion.div
-            key="overlay"
-            variants={overlayVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            onClick={handleClose}
-            className="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-md flex items-center justify-center p-4 lg:p-8"
-          >
-            <motion.div
-              key="modal"
-              variants={modalVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              onClick={(e) => e.stopPropagation()}
-              className="w-full max-w-4xl h-[85vh] bg-bg-card border border-border-subtle rounded-2xl shadow-2xl flex flex-col overflow-hidden"
-            >
-              {/* macOS Title Bar */}
-              <div className="flex items-center px-5 py-4 bg-bg-main/50 border-b border-border-subtle shrink-0">
-                <div className="flex gap-2">
-                  <button
-                    onClick={handleClose}
-                    className="w-3.5 h-3.5 rounded-full bg-red-500 border-none cursor-pointer hover:scale-125 transition-transform"
-                    aria-label="Cerrar"
-                  />
-                  <div className="w-3.5 h-3.5 rounded-full bg-amber-500" />
-                  <div className="w-3.5 h-3.5 rounded-full bg-emerald-500" />
-                </div>
-                <span className="flex-1 text-center text-[10px] md:text-xs text-txt-muted font-bold tracking-[0.25em] uppercase">
-                  Certificate Viewer
-                </span>
-                <button
-                  onClick={handleClose}
-                  className="p-1.5 text-txt-muted hover:text-red-500 transition-colors cursor-pointer"
-                >
-                  <X size={16} />
-                </button>
-              </div>
-
-              {/* Certificate info sub-bar */}
-              <div className="px-6 py-4 bg-bg-main/20 border-b border-border-subtle/50 shrink-0">
-                <h3 className="text-txt-main font-bold text-base md:text-lg m-0">
-                  {selected.title}
-                </h3>
-                <p className="text-txt-muted text-xs md:text-sm m-0 mt-1">
-                  Emitido por {selected.issuer}
-                </p>
-              </div>
-
-              {/* Viewer */}
-              <div className="flex-1 relative bg-black/20 min-h-0">
-                {iframeError ? (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
-                    <FileText size={56} className="text-accent-main mb-5 opacity-80" />
-                    <h4 className="text-txt-main text-xl md:text-2xl font-bold mb-3">
-                      {selected.title}
-                    </h4>
-                    <p className="text-txt-muted text-sm max-w-sm mb-8">
-                      Tu navegador ha bloqueado la previsualización en línea. Haz clic en el botón inferior para abrir el documento directamente.
-                    </p>
-                    <button
-                      onClick={handleVerify}
-                      className="inline-flex items-center gap-2.5 bg-accent-main text-bg-main font-bold text-sm px-6 py-3 rounded-xl cursor-pointer transition-all duration-300"
-                    >
-                      <ExternalLink size={18} />
-                      Abrir Credencial Original
-                    </button>
-                  </div>
-                ) : (
-                  <iframe
-                    src={pdfUrl(selected.file)}
-                    title={selected.title}
-                    className="absolute inset-0 w-full h-full border-0"
-                    onError={() => setIframeError(true)}
-                  />
-                )}
-              </div>
-
-              {/* Footer */}
-              <div className="px-6 py-4 bg-bg-main/30 border-t border-border-subtle shrink-0 flex justify-end">
-                <button
-                  onClick={handleVerify}
-                  className="inline-flex items-center gap-2.5 bg-accent-main text-bg-main font-bold text-sm px-6 py-3 rounded-xl cursor-pointer transition-all duration-300 shadow-lg shadow-accent-main/20"
-                >
-                  <ExternalLink size={18} />
-                  Verificar Credencial
-                </button>
-              </div>
-            </motion.div>
-          </motion.div>
+          <PdfModal
+            key="certificate-modal"
+            title={selected.title}
+            subtitle={`Emitido por ${selected.issuer}`}
+            label="Certificate Viewer"
+            fileUrl={pdfUrl(selected.file)}
+            actionLabel="Verificar Credencial"
+            onClose={handleClose}
+          />
         )}
       </AnimatePresence>
     </>
